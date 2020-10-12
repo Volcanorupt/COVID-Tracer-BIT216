@@ -1,0 +1,18 @@
+:host{
+  width: 100%;
+  height: 50%;
+  background-color: azure;
+}
+
+mat-form-field,
+textarea{
+  width:100%;
+}
+
+.kitName{
+  font-size: 25px;
+}
+
+.numStock{
+font-size: 25px;
+}

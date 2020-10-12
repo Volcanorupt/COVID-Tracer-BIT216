@@ -1,0 +1,10 @@
+.page{
+  background-image: url(https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  height: 50%;
+}
+.info-text{
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+  font-size: large;
+}

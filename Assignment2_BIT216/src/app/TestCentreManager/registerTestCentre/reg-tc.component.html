@@ -1,0 +1,59 @@
+<mat-toolbar color = "primary">
+  <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
+  <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+  <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
+  <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+  <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  <button mat-flat-button color= "warn" >Log Out</button>
+</mat-toolbar>
+
+<h3>Register Test Centre</h3>
+
+    <mat-card>
+
+      <form (submit)= "onAddRegister(registerForm)" #registerForm="ngForm">
+
+        <mat-form-field class = "centreName">
+        <input
+        matInput
+        type= "text"
+        name= "centreName"
+        ngModel
+        required
+        minlength="3"
+        #centreName="ngModel"
+        placeholder= "Enter a test centre name">
+        <mat-error *ngIf= "centreName.invalid">Please Enter Test Centre Name</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "centreTel">
+        <input
+        matInput
+        type= "text"
+        name= "centreTel"
+        ngModel
+        required
+        minlength="3"
+        #centreTel="ngModel"
+        placeholder = "Enter test centre telephone number">
+       <mat-error *ngIf= "centreTel.invalid">Please Enter Test Centre Telephone Number</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class = "centreAdd">
+        <textarea
+        matInput
+        rows= "3"
+        name= "centreAdd"
+        ngModel
+        required
+        minlength="3"
+        #centreAdd="ngModel"
+        placeholder = "Enter test centre address">
+      </textarea>
+      <mat-error *ngIf= "centreAdd.invalid">Please enter Test Centre Address</mat-error>
+      </mat-form-field>
+
+    <button (click)= "onAddReg()" mat-raised-button color = "accent" type = "submit">Register</button>
+
+    </form>
+  </mat-card>

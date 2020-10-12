@@ -1,0 +1,28 @@
+:host{
+    display:block;
+    margin-top: 1rem;
+    height: 50%;
+    background-color: aliceblue;
+  }
+
+th{
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+.info-text{
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+}
+.wrapper {
+  text-align: center;
+}
+.butBack{
+  position: inherit;
+  top: 50%;
+  margin-top: 1rem;
+}

@@ -1,0 +1,37 @@
+<mat-toolbar color = "primary">
+  <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
+  <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+  <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
+  <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test Kit</button>
+  <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  <button mat-flat-button color= "warn" >Log Out</button>
+</mat-toolbar>
+
+
+  <table style="width:100%" multi = "true" *ngIf= "reports.length>0">
+  <tr>
+    <th>patientID</th>
+    <th>Patient Username</th>
+    <th>Patient Password</th>
+    <th>Patient Name</th>
+    <th>Patient Type</th>
+    <th>Patient Symptoms</th>
+  </tr>
+  <tr *ngFor= "let generate of reports">
+    <th></th>
+    <th>{{generate.patientUsername}}</th>
+    <th>{{generate.patientPassword}}</th>
+    <th>{{generate.patientName}}</th>
+    <th>{{generate.patientType}}</th>
+    <th>{{generate.patientSymptoms}}</th>
+  </tr>
+
+</table>
+
+<p class="info-text mat-body-1" *ngIf= "reports.length == 0" > No test has been recorded yet</p>
+
+<div class="wrapper">
+  <button class="butBack" mat-raised-button color ="accent" routerLink= "/tcmHome">Back to main page</button>
+</div>
+
+

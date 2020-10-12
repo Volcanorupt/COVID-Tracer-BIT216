@@ -1,0 +1,23 @@
+:host{
+width: 100%;
+height: 50%;
+background-color: antiquewhite;
+}
+
+mat-form-field,
+
+textarea{
+  width: 100%;
+}
+
+.centreName{
+  font-size: 25px;
+}
+
+.centreTel{
+  font-size: 25px;
+}
+
+.centreAdd{
+  font-size: 25px;
+}
