@@ -1,0 +1,48 @@
+:host{
+  height: 50%;
+}
+
+h2{
+  text-align: center;
+}
+
+mat-form-field,
+
+textarea{
+  width: 100%;
+  background-color: pink;
+
+}
+
+
+.radio{
+
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.usernameP{
+  font-size: 22px;
+  background-color: pink;
+}
+
+.passwordP{
+  font-size: 22px;
+  background-color: pink;
+}
+
+.nameP{
+  font-size: 22px;
+  background-color: pink;
+}
+
+.typeP{
+  font-size: 22px;
+  background-color: pink;
+}
+
+.symptomsP{
+  font-size: 22px;
+  background-color: pink;
+}
+

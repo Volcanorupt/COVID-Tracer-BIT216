@@ -1,0 +1,61 @@
+<mat-toolbar color = "primary">
+  <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
+  <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+  <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
+  <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+  <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  <button mat-flat-button color= "warn" >Log Out</button>
+</mat-toolbar>
+
+  <h3>Record New Tester</h3>
+
+      <mat-card>
+        <form (submit) = "onAddRecord(recordForm)" #recordForm="ngForm">
+
+          <mat-form-field class="officerFullName">
+            <input
+            matInput
+            type= "text"
+            name= "officerFullName"
+            ngModel
+            required
+            minlength= "3"
+            #officerFullName= "ngModel"
+            placeholder = "Enter full name">
+           <mat-error *ngIf= "officerFullName.invalid">Please Enter Test Centre Name.</mat-error>
+          </mat-form-field>
+          <br>
+
+        <mat-form-field class="officerUsername">
+          <input
+          matInput
+          type= "text"
+          name= "officerUsername"
+          ngModel
+          required
+          minlength= "3"
+          #officerUsername= "ngModel"
+          placeholder= "Enter username">
+          <mat-error *ngIf= "officerUsername.invalid">Please Enter Test Centre Name.</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="officerPassword">
+          <input
+          matInput
+          type= "text"
+          name= "officerPassword"
+          ngModel
+          required
+          minlength= "3"
+          #officerPassword= "ngModel"
+          placeholder = "Enter password">
+         <mat-error *ngIf= "officerPassword.invalid">Please Enter Test Centre Name.</mat-error>
+        </mat-form-field>
+
+      <button (click) = "onAddRec()"  mat-raised-button color = "primary" type = "submit">Record Officer</button>
+      <button class="btnManage" mat-raised-button color="accent" routerLink="/list">Manage Tester List</button>
+
+    </form>
+    </mat-card>
+

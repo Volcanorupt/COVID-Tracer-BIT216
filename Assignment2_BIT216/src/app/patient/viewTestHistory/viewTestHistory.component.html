@@ -1,0 +1,32 @@
+<mat-toolbar color = "primary" >
+  <button mat-flat-button color= "primary" routerLink= "/patient"> C19</button>
+  <button mat-flat-button color= "primary" routerLink= "/view-testHistory">View Testing History</button>
+  <button mat-flat-button color= "warn" >Log Out</button>
+
+</mat-toolbar>
+
+
+<h2>History of test taken by you:-</h2>
+<main class="page">
+  <mat-accordion  multi = "true" *ngIf= "tests.length>0">
+    <mat-expansion-panel class="list" *ngFor ="let test of tests">
+      <mat-expansion-panel-header>
+        <p><b>Patient: </b><i>{{test.patientName}}</i></p>
+      </mat-expansion-panel-header>
+      <p><b>Username: </b><i>{{test.patientUsername}}</i></p>
+      <p><b>Password: </b><i>{{test.patientPassword}}</i></p>
+      <p><b>Name: </b><i>{{test.patientName}}</i></p>
+      <p><b>Type: </b><i>{{test.patientType}}</i></p>
+      <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
+
+
+      <mat-action-row>
+        <button mat-raised-button color ="accent" routerLink= "/patient">Back to main page</button>
+      </mat-action-row>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <p class="info-text mat-body-1" *ngIf= "tests.length == 0" > No test has been recorded yet</p>
+
+</main>

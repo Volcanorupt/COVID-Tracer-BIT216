@@ -1,0 +1,50 @@
+<mat-toolbar color = "primary">
+  <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
+  <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+  <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
+  <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+  <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  <button mat-flat-button color= "warn" >Log Out</button>
+</mat-toolbar>
+
+    <h3>Add New Test-Kit Stock</h3>
+
+        <mat-card>
+          <form (submit) = "onAddUpdateKit(updateKitForm)" #updateKitForm="ngForm">
+           <label>New Test Kit</label>
+            <br>
+            <mat-form-field class="kitName">
+              <input
+              matInput
+              type= "text"
+              name= "kitName"
+              ngModel
+              required
+              minlength= "3"
+              #kitName= "ngModel"
+              placeholder = "Enter new test-kit">
+            <mat-error *ngIf= "kitName.invalid">Please Enter Test-Kit Name</mat-error>
+            </mat-form-field>
+            <br>
+
+          <mat-form-field class="numStock">
+            <input
+            matInput
+            type="number"
+            name= "numStock"
+            ngModel
+            required
+            minlength= "3"
+            #numStock= "ngModel"
+            placeholder= "Enter the number of stock">
+            <mat-error *ngIf= "numStock.invalid">Please Enter Number of Stock</mat-error>
+          </mat-form-field>
+
+        <button (click) = "onAddKit()" mat-raised-button color = "primary" type = "submit">Save</button>
+        <button mat-button color="accent" routerLink="/updateKit">Update Stock List</button>
+
+        </form>
+      </mat-card>
+
+
+
