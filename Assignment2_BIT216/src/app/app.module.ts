@@ -31,6 +31,9 @@ import { updateTestResultComponent } from './tester/updateTestResult/updateTestR
 
 import { PatientComponent } from './patient/patient.component';
 import { viewTestHistoryComponent } from './patient/viewTestHistory/viewTestHistory.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -75,7 +78,10 @@ const appRoutes: Routes = [
     updateTestResultComponent,
 
     PatientComponent,
-    viewTestHistoryComponent
+    viewTestHistoryComponent,
+    HomeComponent,
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
