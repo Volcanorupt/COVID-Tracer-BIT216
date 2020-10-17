@@ -5,16 +5,16 @@ $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {
   $username = mysqli_real_escape_string($mysqli, trim($request->username));
-  $pwd = mysqli_real_escape_string($mysqli, (int)$request->pwd);
+  $password = mysqli_real_escape_string($mysqli, (int)$request->password);
   $name = mysqli_real_escape_string($mysqli, trim($request->name));
-  $sql = "INSERT INTO employee(username,pwd,name) VALUES ('{$username}','{$pwd}','{$name}')";
+  $sql = "INSERT INTO employee(username,password,name) VALUES ('{$username}','{$password}','{$name}')";
  // echo $sql;
 if ($mysqli->query($sql) === TRUE) {
 
 
     $authdata = [
       'username' => $username,
-      'pwd' => '',
+      'password' => $password,
       'name' => $name,
       'Id'    => mysqli_insert_id($mysqli)
     ];
