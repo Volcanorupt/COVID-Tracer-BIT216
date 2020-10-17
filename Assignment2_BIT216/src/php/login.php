@@ -5,9 +5,9 @@ $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata))
 {
 	$pwd = mysqli_real_escape_string($mysqli, trim($request->password));
-   $email = mysqli_real_escape_string($mysqli, trim($request->username));
+   $uname = mysqli_real_escape_string($mysqli, trim($request->username));
 $sql='';
-	$sql = "SELECT * FROM employee where email='$email' and pwd='$pwd'";
+	$sql = "SELECT * FROM employee where uname='$uname' and pwd='$pwd'";
 if($result = mysqli_query($mysqli,$sql))
 {
  $rows = array();
@@ -15,7 +15,7 @@ if($result = mysqli_query($mysqli,$sql))
   {
     $rows[] = $row;
   }
- 
+
   echo json_encode($rows);
 }
 else
