@@ -1,0 +1,51 @@
+
+.welcome{
+    text-align: center;
+}
+
+.register{
+    text-align: center;
+}
+
+.page{
+    width:auto;
+    height: auto;
+    text-align: center;
+}
+
+.btnLogin{
+    background-color: white;
+    color: black;
+    border: 2px solid blue;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.btnLogin:hover{
+    background-color: blue;
+    color: white;
+}
+
+.btnRegister{
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    margin-left: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.btnRegister:hover{
+    background-color: green;
+    color: white;
+}

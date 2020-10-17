@@ -14,7 +14,9 @@ import { MatExpansionModule} from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./users/login/login.component";
+import { RegisterComponent } from "./users/register/register.component";
+import { UsersComponent } from "./users/users.component";
 
 import { TcmHomeComponent } from './TestCentreManager/tcmHome/tcmHome.component';
 import { RegisterTcComponent } from './TestCentreManager/registerTestCentre/reg-tc.component';
@@ -31,12 +33,10 @@ import { updateTestResultComponent } from './tester/updateTestResult/updateTestR
 
 import { PatientComponent } from './patient/patient.component';
 import { viewTestHistoryComponent } from './patient/viewTestHistory/viewTestHistory.component';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
 
   {path: 'tcmHome', component: TcmHomeComponent},
   {path: 'reg-tc', component: RegisterTcComponent},
@@ -63,6 +63,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+    RegisterComponent,
+    UsersComponent,
 
     TcmHomeComponent,
     RegisterTcComponent,
@@ -79,9 +81,6 @@ const appRoutes: Routes = [
 
     PatientComponent,
     viewTestHistoryComponent,
-    HomeComponent,
-    RegisterComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,

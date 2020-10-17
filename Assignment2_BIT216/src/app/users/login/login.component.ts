@@ -1,3 +1,4 @@
+
 import {Component,OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
@@ -14,17 +15,6 @@ export class LoginComponent implements OnInit{
 username: string;
 password: string;
 
-  ngOnInit(){
-
-  }
-
-  login(): void {
-    if(this.username == 'officer' && this.password == 'officer'){
-      this.router.navigate(["tester"]);
-    }else{
-      alert("Invalid credential");
-    }
-  }
-
+  ngOnInit(){}
 }
 
