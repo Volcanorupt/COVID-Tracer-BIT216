@@ -17,9 +17,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from "./users/login/login.component";
 import { RegisterComponent } from "./users/register/register.component";
 import { UsersComponent } from "./users/users.component";
-import { DataserviceService } from './users/dataservice.service';
-import { AuthguardGuard } from './users/authguard.guard';
-import { Usermodule } from './users/Usermodule';
 
 import { TcmHomeComponent } from './TestCentreManager/tcmHome/tcmHome.component';
 import { RegisterTcComponent } from './TestCentreManager/registerTestCentre/reg-tc.component';

@@ -1,6 +1,6 @@
 
   /* Full-width inputs */
-  input[type=username], input[type=password], input[type=name] {
+  input[type=text], input[type=password], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 20px 0;

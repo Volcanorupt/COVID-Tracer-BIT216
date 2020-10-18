@@ -1,4 +1,3 @@
-<!--
 <form>
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -8,21 +7,9 @@
     <button type="submit">Login</button>
   </div>
 </form>
-    <button routerLink= "/tcmHome"> Test Centre Officer Login</button>
+    <!--button routerLink= "/tcmHome"> Test Centre Officer Login</button>
     <button routerLink= "/testerHome"> Tester Login</button>
     <button routerLink= "/patient"> Patient Login</button-->
 
 
-      <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
-        <div class="form-group">
-            <label for="Username">Username</label>
-            <input type="username" name="username" formControlName="username" autocomplete="off" class="form-control input-sm" placeholder="Enter Username">
 
-        </div>
-        <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" name="Password" formControlName="password"  autocomplete="off" class="form-control input-sm" placeholder="Enter Password">
-
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!angForm.valid">Login</button>
-    </form>
