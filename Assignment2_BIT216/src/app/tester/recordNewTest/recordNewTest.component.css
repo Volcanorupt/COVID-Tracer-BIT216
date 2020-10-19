@@ -1,48 +1,44 @@
-:host{
-  height: 50%;
-}
-
-h2{
+.container {
+  background-color: aliceblue;
+  width: 100%;
+  height: 80%;
+  margin: 10px;
+  border: 1px solid #555;
   text-align: center;
 }
-
-mat-form-field,
-
-textarea{
-  width: 100%;
-  background-color: pink;
-
-}
-
 
 .radio{
 
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .usernameP{
-  font-size: 22px;
-  background-color: pink;
+  font-size: 20px;
+  width: 50%;
 }
 
 .passwordP{
-  font-size: 22px;
-  background-color: pink;
+   font-size: 20px;
+  width: 50%;
 }
 
 .nameP{
-  font-size: 22px;
-  background-color: pink;
+  font-size: 20px;
+  width: 50%;
 }
 
 .typeP{
-  font-size: 22px;
-  background-color: pink;
+  font-size: 20px;
+  width: 50%;
 }
 
 .symptomsP{
-  font-size: 22px;
-  background-color: pink;
+  font-size: 20px;
+  width: 50%;
 }
 
+.btnRegister{
+  font-size: 20px;
+  width: 20%;
+}

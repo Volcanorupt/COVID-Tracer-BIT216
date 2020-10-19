@@ -1,27 +1,34 @@
-:host{
-    width: 100%;
-    height: 50%;
-    background-color: antiquewhite;
-    }
 
-mat-form-field,
-
-input{
-    width: 100%;
+.container {
+  background-color: aliceblue;
+  width: 100%;
+  height: 80%;
+  margin: 10px;
+  border: 1px solid #555;
+  text-align: center;
 }
 
 .officerFullName{
-    font-size: 25px;
+  font-size: 20px;
+  width: 50%;
 }
 
 .officerUsername{
-  font-size: 25px;
+  font-size: 20px;
+  width: 50%;
 }
 
 .officerPassword{
-    font-size: 25px;
+  font-size: 20px;
+  width: 50%;
+}
+
+.btnRecord{
+  font-size: 20px;
+  width: 20%;
 }
 
 .btnManage{
-  margin-left: 1rem;
+  font-size: 20px;
+  width: 20%;
 }

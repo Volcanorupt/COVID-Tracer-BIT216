@@ -11,9 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule} from '@angular/material/expansion';
+import { MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from "./users/login/login.component";
 import { RegisterComponent } from "./users/register/register.component";
 import { UsersComponent } from "./users/users.component";
@@ -33,8 +34,10 @@ import { updateTestResultComponent } from './tester/updateTestResult/updateTestR
 
 import { PatientComponent } from './patient/patient.component';
 import { viewTestHistoryComponent } from './patient/viewTestHistory/viewTestHistory.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
 
@@ -61,7 +64,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     LoginComponent,
     RegisterComponent,
     UsersComponent,
@@ -81,6 +83,8 @@ const appRoutes: Routes = [
 
     PatientComponent,
     viewTestHistoryComponent,
+    HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +96,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatSidenavModule,
 
     MatExpansionModule,
     FormsModule,

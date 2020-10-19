@@ -1,10 +1,23 @@
-<mat-toolbar color = "primary">
+<!--mat-toolbar color = "primary">
   <button mat-flat-button color= "primary" routerLink= "/testerHome" >C19</button>
   <button mat-flat-button color= "primary" routerLink= "/rec-newTest">Record New Test</button>
   <button mat-flat-button color= "primary" routerLink= "/update-testResult">Update Test Result</button>
-  <button mat-flat-button color= "warn" >Log Out</button>
-</mat-toolbar>
+</mat-toolbar-->
 
+
+<mat-drawer-container class= "container">
+
+	<mat-drawer mode="side" opened>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/testerHome">Home</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/rec-newTest" >Record New Test</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/update-testResult">Update Test Result</button>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    
 <input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID">
 
 <h2 class="label">List of Test Results:-</h2>
@@ -21,7 +34,6 @@
     <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
     <p><b>Status: </b><i>Pending</i></p>
 
-
     <mat-action-row>
       <button mat-raised-button color ="primary">Edit</button>
       <button mat-raised-button color ="warn">Delete</button>
@@ -31,5 +43,9 @@
 </mat-accordion>
 
 <p class="info-text mat-body-1" *ngIf= "tests.length == 0" > No test has been recorded yet</p>
+
+</mat-drawer-content>
+  
+</mat-drawer-container>
 
 

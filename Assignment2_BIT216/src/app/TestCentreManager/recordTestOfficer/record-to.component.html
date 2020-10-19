@@ -1,17 +1,31 @@
-<mat-toolbar color = "primary">
+<!--mat-toolbar color = "primary">
   <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
   <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
   <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
   <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
   <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
-  <button mat-flat-button color= "warn" >Log Out</button>
-</mat-toolbar>
+</mat-toolbar-->
 
-  <h3>Record New Tester</h3>
+<mat-drawer-container class= "container">
 
-      <mat-card>
+	<mat-drawer mode="side" opened>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/tcmHome">Home</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  </mat-drawer>
+
+	<mat-drawer-content>
+    
+    <h2>Record New Tester</h2>
+
         <form (submit) = "onAddRecord(recordForm)" #recordForm="ngForm">
-
           <mat-form-field class="officerFullName">
             <input
             matInput
@@ -52,10 +66,14 @@
           placeholder = "Enter password">
          <mat-error *ngIf= "officerPassword.invalid">Please Enter Test Centre Name.</mat-error>
         </mat-form-field>
+          <br><br>
 
-      <button (click) = "onAddRec()"  mat-raised-button color = "primary" type = "submit">Record Officer</button>
+      <button class = "btnRecord" (click) = "onAddRec()"  mat-raised-button color = "primary" type = "submit">Record Officer</button>
+      <br><br>
       <button class="btnManage" mat-raised-button color="accent" routerLink="/list">Manage Tester List</button>
-
     </form>
-    </mat-card>
 
+  </mat-drawer-content>
+  
+</mat-drawer-container>
+  

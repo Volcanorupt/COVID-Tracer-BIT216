@@ -1,10 +1,11 @@
-:host{
-  display:block;
-  margin-top: 1rem;
-  height: auto;
-  background-image: url(https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+.container {
+  background-color: aliceblue;
+  width: 100%;
+  height: 80%;
+  margin: 10px;
+  border: 1px solid #555;
+  text-align: center;
 }
-
 
 .info-text{
   font-style: italic;
@@ -20,10 +21,6 @@
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.info-text{
-  text-align: center;
 }
 
 .testIDbox{

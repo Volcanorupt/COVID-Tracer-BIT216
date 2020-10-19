@@ -1,16 +1,31 @@
-<mat-toolbar color = "primary">
+<!--mat-toolbar color = "primary">
   <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
   <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
   <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
   <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
   <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
-  <button mat-flat-button color= "warn" >Log Out</button>
-</mat-toolbar>
+</mat-toolbar-->
 
-<h3>Register Test Centre</h3>
 
-    <mat-card>
+<mat-drawer-container class="container">
 
+	<mat-drawer mode="side" opened>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/tcmHome">Home</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+   
+    <h2>Register Test Centre</h2>
+    
       <form (submit)= "onAddRegister(registerForm)" #registerForm="ngForm">
 
         <mat-form-field class = "centreName">
@@ -25,6 +40,7 @@
         placeholder= "Enter a test centre name">
         <mat-error *ngIf= "centreName.invalid">Please Enter Test Centre Name</mat-error>
       </mat-form-field>
+        <br>
 
       <mat-form-field class = "centreTel">
         <input
@@ -38,6 +54,7 @@
         placeholder = "Enter test centre telephone number">
        <mat-error *ngIf= "centreTel.invalid">Please Enter Test Centre Telephone Number</mat-error>
       </mat-form-field>
+        <br>
 
       <mat-form-field class = "centreAdd">
         <textarea
@@ -52,8 +69,12 @@
       </textarea>
       <mat-error *ngIf= "centreAdd.invalid">Please enter Test Centre Address</mat-error>
       </mat-form-field>
+        <br><br>
 
-    <button (click)= "onAddReg()" mat-raised-button color = "accent" type = "submit">Register</button>
-
+    <button class= "btnRegister" (click)= "onAddReg()" mat-raised-button color = "primary" type = "submit">Register</button>
     </form>
-  </mat-card>
+
+  </mat-drawer-content>
+
+</mat-drawer-container>
+    

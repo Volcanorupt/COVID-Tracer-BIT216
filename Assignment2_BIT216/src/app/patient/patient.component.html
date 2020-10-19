@@ -1,10 +1,19 @@
-<mat-toolbar color = "primary" >
+<!--mat-toolbar color = "primary" >
   <button mat-flat-button color= "primary" routerLink= "/patient"> C19</button>
   <button mat-flat-button color= "primary" routerLink= "/view-testHistory">View Testing History</button>
-  <button mat-flat-button color= "warn" >Log Out</button>
+</mat-toolbar-->
 
-</mat-toolbar>
+<mat-drawer-container class= "container">
+  
+  <mat-drawer mode="side" opened>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/patient">Home</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/view-testHistory" >View Test History</button>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <h3>Welcome Patient!</h3>
+  </mat-drawer-content>
 
-<main class = "page">
-  <h1>Welcome Patient!</h1>
-</main>
+</mat-drawer-container>

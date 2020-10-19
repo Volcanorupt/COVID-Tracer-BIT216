@@ -1,18 +1,28 @@
-:host{
+.container {
+  background-color: aliceblue;
   width: 100%;
-  height: 50%;
-  background-color: azure;
-}
-
-mat-form-field,
-textarea{
-  width:100%;
+  height: 80%;
+  margin: 10px;
+  border: 1px solid #555;
+  text-align: center;
 }
 
 .kitName{
-  font-size: 25px;
+  font-size: 20px;
+  width: 50%;
 }
 
 .numStock{
-font-size: 25px;
+  font-size: 20px;
+  width: 50%;
+}
+
+.btnSave{
+  font-size: 20px;
+  width: 20%;
+}
+
+.btnUpdate{
+  font-size: 20px;
+  width: 20%;
 }

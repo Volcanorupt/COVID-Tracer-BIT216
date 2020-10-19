@@ -1,89 +1,100 @@
-<mat-toolbar color = "primary" >
+<!--mat-toolbar color = "primary" >
   <button mat-flat-button color= "primary" routerLink= "/testerHome"> C19</button>
   <button mat-flat-button color= "primary" routerLink= "/rec-newTest">Record New Test</button>
   <button mat-flat-button color= "primary" routerLink= "/update-testResult">Update Test Result</button>
-  <button mat-flat-button color= "warn" >Log Out</button>
 
-</mat-toolbar>
+</mat-toolbar-->
 
+<mat-drawer-container class= "container">
 
-<h2 [ngStyle] ="{'background-color': 'deeppink' }">Record New Test<h2>
+	<mat-drawer mode="side" opened>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/testerHome">Home</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/rec-newTest" >Record New Test</button>
+    <br>
+    <button mat-flat-button color= "primary" routerLink= "/update-testResult">Update Test Result</button>
+ 
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <h2>Record New Test</h2>
+    <br>
+    
+        <form (submit)= "onAddTest(testForm)" #testForm="ngForm">
+        <mat-form-field class="usernameP">
+          <input
+          matInput
+          type= "text"
+          name= "patientUsername"
+          ngModel
+          required
+          minlength= "3"
+          #patientUsername= "ngModel"
+          placeholder= "Enter patient username">
+        <mat-error *ngIf= "patientUsername.invalid">Please Enter Patient Username.</mat-error>
+        </mat-form-field>
+    <br>
+        <mat-form-field class="passwordP">
+          <input
+          matInput
+          type= "text"
+          name= "patientPassword"
+          ngModel
+          required
+          minlength= "3"
+          #patientPassword= "ngModel"
+          placeholder = "Enter patient password">
+         <mat-error *ngIf= "patientPassword.invalid">Please Enter Patient Password.</mat-error>
+        </mat-form-field>
+    <br>
+        <mat-form-field class="nameP">
+          <input
+            matInput
+            type= "text"
+            name= "patientName"
+            ngModel
+            required
+            minlength= "3"
+            #patientName= "ngModel"
+            placeholder = "Enter patient name">
+          <mat-error *ngIf= "patientName.invalid">Please enter Patient Name</mat-error>
+        </mat-form-field>
+    <br>
+        <mat-form-field class="typeP">
+          <input
+            matInput
+            type= "text"
+            name= "patientType"
+            ngModel
+            required
+            minlength= "3"
+            #patientType= "ngModel"
+            placeholder = "Enter patient type eg.Returnee,Quarantined,Close Contact,Infected,Suspected">
+          <mat-error *ngIf= "patientType.invalid">Please enter Patient Type</mat-error>
+        </mat-form-field>
+    <br>
+        <mat-form-field class="symptomsP">
+          <textarea
+            matInput
+            type= "text"
+            name= "patientSymptoms"
+            ngModel
+            required
+            minlength= "3"
+            #patientSymptoms= "ngModel"
+            placeholder = "Enter patient's symptoms">
+            </textarea>
+          <mat-error *ngIf= "patientSymptoms.invalid">Please enter Patient's Symptoms</mat-error>
+        </mat-form-field>
+    <br>
+          <button mat-flat-button color= "primary" class = "btnRegister" (click)= "onAddReg()" type= "submit">Register</button>
+        </form>
+    
+  </mat-drawer-content>
+  
+</mat-drawer-container>
 
-  <mat-card>
-    <form (submit)= "onAddTest(testForm)" #testForm="ngForm">
-    <mat-form-field class="usernameP">
-      <input
-      matInput
-      type= "text"
-      name= "patientUsername"
-      ngModel
-      required
-      minlength= "3"
-      #patientUsername= "ngModel"
-      placeholder= "Enter patient username">
-    <mat-error *ngIf= "patientUsername.invalid">Please Enter Patient Username.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="passwordP">
-      <input
-      matInput
-      type= "text"
-      name= "patientPassword"
-      ngModel
-      required
-      minlength= "3"
-      #patientPassword= "ngModel"
-      placeholder = "Enter patient password">
-     <mat-error *ngIf= "patientPassword.invalid">Please Enter Patient Password.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="nameP">
-      <input
-      matInput
-      type= "text"
-      name= "patientName"
-      ngModel
-      required
-      minlength= "3"
-      #patientName= "ngModel"
-      placeholder = "Enter patient name">
-    <mat-error *ngIf= "patientName.invalid">Please enter Patient Name</mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="typeP">
-      <input
-      matInput
-      type= "text"
-      name= "patientType"
-      ngModel
-      required
-      minlength= "3"
-      #patientType= "ngModel"
-      placeholder = "Enter patient type eg.Returnee,Quarantined,Close Contact,Infected,Suspected">
-    <mat-error *ngIf= "patientType.invalid">Please enter Patient Type</mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="symptomsP">
-    <textarea
-      matInput
-      type= "text"
-      name= "patientSymptoms"
-      ngModel
-      required
-      minlength= "3"
-      #patientSymptoms= "ngModel"
-      placeholder = "Enter patient's symptoms">
-      </textarea>
-   <mat-error *ngIf= "patientSymptoms.invalid">Please enter Patient's Symptoms</mat-error>
-    </mat-form-field>
-
-      <button
-      mat-raised-button
-      (click)= "onAddReg()"
-      color = "accent"
-      type= "submit">Register</button>
-  </form>
-  </mat-card>
 
 
 
