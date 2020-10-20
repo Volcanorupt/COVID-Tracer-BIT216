@@ -1,10 +1,3 @@
-<mat-toolbar color = "primary">
-  <button mat-flat-button color= "primary" routerLink= "/tcmHome">C19</button>
-  <button mat-flat-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
-  <button mat-flat-button color= "primary" routerLink= "/record-to">Record Tester</button>
-  <button mat-flat-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
-  <button mat-flat-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
-</mat-toolbar>
 
 <!--mat-accordion multi = "true" *ngIf= "registers.length>0">
     <mat-expansion-panel *ngFor= "let register of registers">
@@ -22,27 +15,46 @@
     </mat-action-row>
 </mat-accordion-->
 
-<h3>List of Testers</h3>
-<br>
-<mat-accordion multi = "true" *ngIf= "records.length>0">
-    <mat-expansion-panel *ngFor= "let record of records">
-      <mat-expansion-panel-header>
-        <p><b>Tester ID: </b></p>
-     </mat-expansion-panel-header>
-      <p><b>Tester Full Name: </b>{{record.officerFullName}}</p>
-      <p><b>Tester Username: </b> {{record.officerUsername}}</p>
-      <p><b>Tester Password: </b> {{record.officerPassword}}</p>
-    </mat-expansion-panel>
+<mat-drawer-container class= "container">
 
-    <mat-action-row>
-      <button mat-button color="primary">Edit</button>
-      <button mat-button color="warn">Delete</button>
-    </mat-action-row>
+	<mat-drawer mode="side" opened>
+    <button mat-stroked-button color= "primary" routerLink= "/tcmHome">Home</button>
+    <br>
+    <button mat-stroked-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <br>
+    <button mat-stroked-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <br>
+    <button mat-stroked-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <br>
+    <button mat-stroked-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <h3>List of Testers</h3>
+      <br>
+    
+    <mat-accordion multi = "true" *ngIf= "records.length>0">
+      <mat-expansion-panel *ngFor= "let record of records">
+        <mat-expansion-panel-header>
+          <p><b>Tester ID: </b></p>
+      </mat-expansion-panel-header>
+          <p><b>Tester Full Name: </b>{{record.officerFullName}}</p>
+          <p><b>Tester Username: </b> {{record.officerUsername}}</p>
+          <p><b>Tester Password: </b> {{record.officerPassword}}</p>
+      </mat-expansion-panel>
 
-  </mat-accordion>
-  <p class= "info-text mat-body-1" *ngIf= "records.length == 0"> No post added yet </p>
+      <mat-action-row>
+          <button mat-button color="primary">Edit</button>
+          <button mat-button color="warn">Delete</button>
+      </mat-action-row>
+    </mat-accordion>
+  
+      <p class= "info-text mat-body-1" *ngIf= "records.length == 0"> No post added yet </p>
 
-  <div class="wrapper">
-    <button mat-button color= "primary" routerLink = "/record-to">Back to Record</button>
-  </div>
+      <div class="wrapper">
+        <button mat-button color= "primary" routerLink = "/record-to">Back to Record</button>
+      </div>
+  </mat-drawer-content>
+
+
 
