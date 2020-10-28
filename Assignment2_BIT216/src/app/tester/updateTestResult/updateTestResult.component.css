@@ -1,6 +1,12 @@
+
+ button{
+  width: 100%;
+  height: 15%;
+}
+
 .container {
   background-color: aliceblue;
-  width: 100%;
+  width: auto;
   height: 80%;
   margin: 10px;
   border: 1px solid #555;
@@ -13,15 +19,6 @@
   font-weight: bold;
   font-size: large;
 }
-.list{
-
-  /*border: 3px solid blue;*/
-  display:block;
-  width:80%;
-  margin-top: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .testIDbox{
   margin-left: 1rem;
@@ -30,8 +27,9 @@
  .label{
   margin-left: 1rem;
  }
- 
- button{
-  width: 100%;
-  height: 15%;
-}
+
+ .btnRecord{
+  font-size: 15px;
+  width: 20%;
+  height: auto;
+ }

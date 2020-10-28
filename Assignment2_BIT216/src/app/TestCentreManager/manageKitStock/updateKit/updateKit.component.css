@@ -1,18 +1,26 @@
+button{
+  width: 100%;
+  height: 15%;
+}
+
 .container {
   background-color: aliceblue;
-  width: 100%;
+  width: auto;
   height: 80%;
   margin: 10px;
   border: 1px solid #555;
   text-align: center;
 }
 
-.btnBack{
-  font-size: 20px;
+.btnAddStock{
+  font-size: 15px;
   width: 20%;
+  height: auto;
 }
 
-button{
-  width: 100%;
-  height: 15%;
+.info-text{
+  font-style: italic;
+  color: red;
+  font-weight: bold;
+  font-size: large;
 }

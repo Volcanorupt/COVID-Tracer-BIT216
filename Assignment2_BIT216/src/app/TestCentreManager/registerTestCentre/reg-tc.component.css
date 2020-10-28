@@ -6,7 +6,7 @@
 
 .container {
   background-color: aliceblue;
-  width: 100%;
+  width: auto;
   height: 80%;
   margin: 10px;
   border: 1px solid #555;

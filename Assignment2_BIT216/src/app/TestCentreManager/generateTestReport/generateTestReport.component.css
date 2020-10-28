@@ -1,7 +1,7 @@
 
 .container {
   background-color: aliceblue;
-  width: 100%;
+  width: auto;
   height: 80%;
   margin: 10px;
   border: 1px solid #555;
@@ -21,15 +21,11 @@ th{
   font-size: large;
   text-align: center;
 }
-.wrapper {
-  text-align: center;
-}
+
 .butBack{
-  position: inherit;
-  top: 50%;
-  margin-top: 1rem;
-  font-size: 20px;
+  font-size: 15px;
   width: 20%;
+  height: auto;
 }
 
 button{

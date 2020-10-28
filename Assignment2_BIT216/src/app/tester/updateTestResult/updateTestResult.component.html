@@ -9,16 +9,16 @@
     <button mat-stroked-button color= "primary" routerLink= "/update-testResult">Update Test Result</button>
   </mat-drawer>
   
-  <mat-drawer-content>
-    
-<input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID">
+<mat-drawer-content>
+  
+  <h3 class="label">List of Test Results:-</h3>
 
-<h2 class="label">List of Test Results:-</h2>
+  <input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID">
 
-<mat-accordion  multi = "true" *ngIf= "tests.length>0">
+ <mat-accordion  multi = "true" *ngIf= "tests.length>0">
   <mat-expansion-panel class="list" *ngFor ="let test of tests">
     <mat-expansion-panel-header>
-      <p><b>Patient: </b><i>{{test.patientName}}</i></p>
+      <p><b>Patient: {{test.patientName}}</b></p>
     </mat-expansion-panel-header>
     <p><b>Username: </b><i>{{test.patientUsername}}</i></p>
     <p><b>Password: </b><i>{{test.patientPassword}}</i></p>
@@ -36,6 +36,8 @@
 </mat-accordion>
 
 <p class="info-text mat-body-1" *ngIf= "tests.length == 0" > No test has been recorded yet</p>
+<br>
+<button class = "btnRecord" mat-stroked-button color ="accent" routerLink= "/rec-newTest">Add New Test</button>
 
 </mat-drawer-content>
   

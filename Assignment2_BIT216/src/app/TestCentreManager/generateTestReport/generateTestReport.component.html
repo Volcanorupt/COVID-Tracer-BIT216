@@ -13,7 +13,8 @@
   </mat-drawer>
 
 	<mat-drawer-content>
-  
+    <h2>Generate Test Report</h2>
+
     <table style="width:100%" multi = "true" *ngIf= "reports.length>0">
       <tr>
         <th>patientID</th>
@@ -35,10 +36,8 @@
     </table>
     
     <p class="info-text mat-body-1" *ngIf= "reports.length == 0" > No test has been recorded yet</p>
-    
-    <div class="wrapper">
-      <button class="butBack" mat-raised-button color ="accent" routerLink= "/tcmHome">Back to main page</button>
-    </div>
+    <br>
+    <button class="butBack" mat-stroked-button color ="accent" routerLink= "/tcmHome">Back to main page</button>
     
   </mat-drawer-content>
 </mat-drawer-container>

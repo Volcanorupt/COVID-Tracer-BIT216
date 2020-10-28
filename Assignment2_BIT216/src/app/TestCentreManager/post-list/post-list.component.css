@@ -3,8 +3,20 @@ button{
   height: 15%;
 }
 
+.container {
+  background-color: aliceblue;
+  width: auto;
+  height: 80%;
+  margin: 10px;
+  border: 1px solid #555;
+  text-align: center;
+}
+
   .info-text{
-    text-align: center;
+    font-style: italic;
+    color: red;
+    font-weight: bold;
+    font-size: large;
   }
 
   .aSize{
@@ -16,3 +28,8 @@ button{
   text-align: center;
 }
 
+.btnNewTester{
+  font-size: 15px;
+  width: 20%;
+  height: auto;
+}

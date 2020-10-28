@@ -1,19 +1,4 @@
 
-<!--mat-accordion multi = "true" *ngIf= "registers.length>0">
-    <mat-expansion-panel *ngFor= "let register of registers">
-      <mat-expansion-panel-header>
-         <p>testCentreID()</p>
-      </mat-expansion-panel-header>
-      <p>Centre Name: {{register.centreName}}</p>
-      <p>Centre Hotline: {{register.centreTel}}</p>
-      <p>Centre Address: {{register.centreAdd}}</p>
-    </mat-expansion-panel>
-
-    <mat-action-row>
-      <button mat-button-color="primary">Edit</button>
-      <button mat-button-color="warn">Delete</button>
-    </mat-action-row>
-</mat-accordion-->
 
 <mat-drawer-container class= "container">
 
@@ -30,7 +15,7 @@
   </mat-drawer>
   
   <mat-drawer-content>
-    <h3>List of Testers</h3>
+    <h3>List of Testers:-</h3>
       <br>
     
     <mat-accordion multi = "true" *ngIf= "records.length>0">
@@ -41,20 +26,20 @@
           <p><b>Tester Full Name: </b>{{record.officerFullName}}</p>
           <p><b>Tester Username: </b> {{record.officerUsername}}</p>
           <p><b>Tester Password: </b> {{record.officerPassword}}</p>
+          <mat-action-row>
+            <button mat-flat-button color="primary">Edit</button>
+            <button mat-flat-button color="warn">Delete</button>
+        </mat-action-row>
       </mat-expansion-panel>
-
-      <mat-action-row>
-          <button mat-button color="primary">Edit</button>
-          <button mat-button color="warn">Delete</button>
-      </mat-action-row>
     </mat-accordion>
   
-      <p class= "info-text mat-body-1" *ngIf= "records.length == 0"> No post added yet </p>
-
-      <div class="wrapper">
-        <button mat-button color= "primary" routerLink = "/record-to">Back to Record</button>
-      </div>
+      <p class= "info-text mat-body-1" *ngIf= "records.length == 0"> No tester added yet </p>
+      <br>
+        <button class = "btnNewTester" mat-stroked-button color= "accent" routerLink = "/record-to">Record New Tester</button>
   </mat-drawer-content>
+
+</mat-drawer-container>
+
 
 
 
