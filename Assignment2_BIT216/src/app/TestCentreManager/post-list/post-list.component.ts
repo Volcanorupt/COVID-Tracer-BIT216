@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs';
 import {Register} from '../post.model';
 import {Record} from '../post.model';
 import {PostsService} from '../posts.service';
@@ -13,12 +14,19 @@ import {PostsService} from '../posts.service';
 export class PostListComponent implements OnInit{
 
    registers: Register[] = [];
+   private registersSub:Subscription;
+
    records: Record[] = [];
 
    constructor(public PostsService:PostsService){}
 
    ngOnInit(){
-     this.registers = this.PostsService.getRegisters();
+    this.PostsService.getRegisters();
+    this.registersSub = this.PostsService.getRegistersUpdateListener()
+    .subscribe((registers: Register[]) => {
+      this.registers = registers;
+    });
+
      this.records = this.PostsService.getRecords();
    }
 }

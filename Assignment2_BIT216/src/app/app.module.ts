@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -67,7 +68,7 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     UsersComponent,
-
+    
     TcmHomeComponent,
     RegisterTcComponent,
     RecordToComponent,
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatFormFieldModule,
+    HttpClientModule,
 
     MatInputModule,
     MatButtonModule,

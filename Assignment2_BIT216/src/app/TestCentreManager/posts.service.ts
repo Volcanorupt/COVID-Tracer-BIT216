@@ -2,21 +2,54 @@ import {Register} from './post.model';
 import {Record} from './post.model';
 import {Generate} from './post.model';
 import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 
 export class PostsService {
 
- private registers: Register[]= [];
+private registers: Register[]= [];
+private registersUpdated = new Subject<Register[]>();
 
-  getRegisters(){
-    return this.registers;
-  }
+constructor(private http: HttpClient){}
 
-  addRegister(centreName: string, centreTel: string, centreAdd: string){
-    const register: Register = {centreName:centreName, centreTel:centreTel, centreAdd:centreAdd };
+getRegisters(){
+  this.http.get<{message: string, registers: any}>('http://localhost:3000/api/post')
+  .pipe(map((postData) => {
+    return postData.registers.map(register => {
+      return{
+        centreName: register.centreName,
+        centreTel: register.centreTel,
+        centreAdd: register.centreAdd,
+        id: register._id
+      };
+    });
+  }))
+
+  .subscribe((transformedRegisters) =>{
+    this.registers = transformedRegisters;
+    this.registersUpdated.next([...this.registers]);
+  })
+}
+
+getRegistersUpdateListener(){
+  return this.registersUpdated.asObservable();
+}
+
+addRegister(centreName: string, centreTel: string, centreAdd: string){
+  const register: Register = {id: null, centreName:centreName, centreTel:centreTel, centreAdd:centreAdd};
+  this.http
+  .post<{message:string, registerId: string}>('http://localhost:3000/api/posts', register)
+  .subscribe((responseData) =>{
+    const id = responseData.registerId;
+    register.id = id;
     this.registers.push(register);
-  }
+    this.registersUpdated.next([...this.registers]);
+  });
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   private records: Record[]=[];
