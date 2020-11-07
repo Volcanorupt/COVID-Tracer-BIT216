@@ -1,33 +1,33 @@
-import {Component, OnInit} from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import {Register} from '../post.model';
-import {Record} from '../post.model';
-import {PostsService} from '../posts.service';
+
+import { Record } from '../post.model';
+import { PostsService } from '../posts.service';
 
 
 @Component({
-  selector :'app-post-list',
+  selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css']
 })
 
-export class PostListComponent implements OnInit{
+export class PostListComponent implements OnInit {
 
-   registers: Register[] = [];
-   private registersSub:Subscription;
+  registers: Register[] = [];
+  private registersSub: Subscription;
 
-   records: Record[] = [];
+  records: Record[] = [];
 
-   constructor(public PostsService:PostsService){}
+  constructor(public PostsService: PostsService) { }
 
-   ngOnInit(){
+  ngOnInit() {
     this.PostsService.getRegisters();
     this.registersSub = this.PostsService.getRegistersUpdateListener()
-    .subscribe((registers: Register[]) => {
-      this.registers = registers;
-    });
+      .subscribe((registers: Register[]) => {
+        this.registers = registers;
+      });
 
-     this.records = this.PostsService.getRecords();
-   }
+    this.records = this.PostsService.getRecords();
+  }
 }
-
+*/

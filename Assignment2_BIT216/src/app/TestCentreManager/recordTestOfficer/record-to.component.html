@@ -1,71 +1,49 @@
+<mat-drawer-container class="container">
 
-<mat-drawer-container class= "container">
-
-	<mat-drawer mode="side" opened>
-    <button mat-stroked-button color= "primary" routerLink= "/tcmHome">Home</button>
+  <mat-drawer mode="side" opened>
+    <button mat-stroked-button color="primary" routerLink="/tcmHome">Home</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <button mat-stroked-button color="primary" routerLink="/reg-tc">Register Test Centre</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <button mat-stroked-button color="primary" routerLink="/record-to">Record Tester</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <button mat-stroked-button color="primary" routerLink="/manage-stock">Manage Test-Kit Stock</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+    <button mat-stroked-button color="primary" routerLink="/generate-testReport">Generate Test Report</button>
   </mat-drawer>
 
-	<mat-drawer-content>
-    
+  <mat-drawer-content>
+
     <h2>Record New Tester</h2>
 
-        <form (submit) = "onAddRecord(recordForm)" #recordForm="ngForm">
-          <mat-form-field class="officerFullName">
-            <input
-            matInput
-            type= "text"
-            name= "officerFullName"
-            ngModel
-            required
-            minlength= "3"
-            #officerFullName= "ngModel"
-            placeholder = "Enter full name">
-           <mat-error *ngIf= "officerFullName.invalid">Please Enter Test Centre Name.</mat-error>
-          </mat-form-field>
-          <br>
+    <form (submit)="onAddTester(recordForm)" #recordForm="ngForm">
+      <mat-form-field class="officerName">
+        <input matInput type="text" name="officerName" ngModel required minlength="3" #officerName="ngModel"
+          placeholder="Enter officer name">
+        <mat-error *ngIf="officerName.invalid">Please Enter Officer Name.</mat-error>
+      </mat-form-field>
+      <br>
 
-        <mat-form-field class="officerUsername">
-          <input
-          matInput
-          type= "text"
-          name= "officerUsername"
-          ngModel
-          required
-          minlength= "3"
-          #officerUsername= "ngModel"
-          placeholder= "Enter username">
-          <mat-error *ngIf= "officerUsername.invalid">Please Enter Test Centre Name.</mat-error>
-        </mat-form-field>
-        <br>
+      <mat-form-field class="officerPosition">
+        <input matInput type="text" name="officerPosition" ngModel required minlength="3" #officerPosition="ngModel"
+          placeholder="Enter officer position">
+        <mat-error *ngIf="officerPosition.invalid">Please Enter Officer position.</mat-error>
+      </mat-form-field>
+      <br>
 
-        <mat-form-field class="officerPassword">
-          <input
-          matInput
-          type= "text"
-          name= "officerPassword"
-          ngModel
-          required
-          minlength= "3"
-          #officerPassword= "ngModel"
-          placeholder = "Enter password">
-         <mat-error *ngIf= "officerPassword.invalid">Please Enter Test Centre Name.</mat-error>
-        </mat-form-field>
-          <br><br>
+      <mat-form-field class="testCentreId">
+        <input matInput type="text" name="testCentreId" ngModel required minlength="3" #testCentreId="ngModel"
+          placeholder="Enter test centre Id">
+        <mat-error *ngIf="testCentreId.invalid">Please Enter Test Centre Id.</mat-error>
+      </mat-form-field>
+      <br><br>
 
-      <button class = "btnRecord" (click) = "onAddRec()"  mat-raised-button color = "primary" type = "submit">Record Officer</button>
+      <button class="btnRecord" (click)="onAddRec()" mat-raised-button color="primary" type="submit">Record
+        Officer</button>
       <br><br>
       <button class="btnManage" mat-raised-button color="accent" routerLink="/list">Manage Tester List</button>
     </form>
 
   </mat-drawer-content>
-  
+
 </mat-drawer-container>
-  

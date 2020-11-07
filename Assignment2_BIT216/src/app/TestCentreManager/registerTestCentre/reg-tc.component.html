@@ -1,71 +1,48 @@
-
 <mat-drawer-container class="container">
 
-	<mat-drawer mode="side" opened>
-    <button mat-stroked-button color= "primary" routerLink= "/tcmHome">Home</button>
+  <mat-drawer mode="side" opened>
+    <button mat-stroked-button color="primary" routerLink="/tcmHome">Home</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <button mat-stroked-button color="primary" routerLink="/reg-tc">Register Test Centre</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <button mat-stroked-button color="primary" routerLink="/record-to">Record Tester</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <button mat-stroked-button color="primary" routerLink="/manage-stock">Manage Test-Kit Stock</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+    <button mat-stroked-button color="primary" routerLink="/generate-testReport">Generate Test Report</button>
   </mat-drawer>
-  
+
   <mat-drawer-content>
-   
+
     <h2>Register Test Centre</h2>
-    
-      <form (submit)= "onAddRegister(registerForm)" #registerForm="ngForm">
 
-        <mat-form-field class = "centreName">
-        <input
-        matInput
-        type= "text"
-        name= "centreName"
-        ngModel
-        required
-        minlength="3"
-        #centreName="ngModel"
-        placeholder= "Enter a test centre name">
-        <mat-error *ngIf= "centreName.invalid">Please Enter Test Centre Name</mat-error>
+    <form (submit)="onAddTestCentre(registerForm)" #registerForm="ngForm">
+
+      <mat-form-field class="centreName">
+        <input matInput type="text" name="centreName" ngModel required minlength="3" #centreName="ngModel"
+          placeholder="Enter a test centre name">
+        <mat-error *ngIf="centreName.invalid">Please Enter Test Centre Name</mat-error>
       </mat-form-field>
-        <br>
+      <br>
 
-      <mat-form-field class = "centreTel">
-        <input
-        matInput
-        type= "text"
-        name= "centreTel"
-        ngModel
-        required
-        minlength="3"
-        #centreTel="ngModel"
-        placeholder = "Enter test centre telephone number">
-       <mat-error *ngIf= "centreTel.invalid">Please Enter Test Centre Telephone Number</mat-error>
+      <mat-form-field class="centreTel">
+        <input matInput type="text" name="centreTel" ngModel required minlength="3" #centreTel="ngModel"
+          placeholder="Enter test centre telephone number">
+        <mat-error *ngIf="centreTel.invalid">Please Enter Test Centre Telephone Number</mat-error>
       </mat-form-field>
-        <br>
+      <br>
 
-      <mat-form-field class = "centreAdd">
-        <textarea
-        matInput
-        rows= "3"
-        name= "centreAdd"
-        ngModel
-        required
-        minlength="3"
-        #centreAdd="ngModel"
-        placeholder = "Enter test centre address">
+      <mat-form-field class="centreAdd">
+        <textarea matInput rows="3" name="centreAdd" ngModel required minlength="3" #centreAdd="ngModel"
+          placeholder="Enter test centre address">
       </textarea>
-      <mat-error *ngIf= "centreAdd.invalid">Please enter Test Centre Address</mat-error>
+        <mat-error *ngIf="centreAdd.invalid">Please enter Test Centre Address</mat-error>
       </mat-form-field>
-        <br><br>
+      <br><br>
 
-    <button class= "btnRegister" (click)= "onAddReg()" mat-raised-button color = "primary" type = "submit">Register</button>
+      <button class="btnRegister" (click)="onAddReg()" mat-raised-button color="primary" type="submit">Register</button>
     </form>
 
   </mat-drawer-content>
 
 </mat-drawer-container>
-    

@@ -1,17 +1,17 @@
-import {Test} from './tester.model';
-import {Injectable} from '@angular/core';
+import { Test } from './tester.model';
+import { Injectable } from '@angular/core';
 
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 
 export class TestService {
   private tests: Test[] = [];
 
-  getTests(){
+  getTests() {
     return this.tests;
   }
 
- addTest(patientUsername: string, patientPassword: string, patientName: string, patientType: string, patientSymptoms: string) {
-   const test: Test = {patientUsername: patientUsername, patientPassword:patientPassword, patientName:patientName, patientType:patientType, patientSymptoms:patientSymptoms };
-   this.tests.push(test);
+  addTest(patientUsername: string, patientPassword: string, patientName: string, patientType: string, patientSymptoms: string) {
+    const test: Test = { patientUsername: patientUsername, patientPassword: patientPassword, patientName: patientName, patientType: patientType, patientSymptoms: patientSymptoms };
+    this.tests.push(test);
   }
 }

@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {Test} from '../tester/tester.model';
+import { Test } from '../tester/tester.model';
 
 @Component({
   selector: 'app-testerHome',
@@ -10,7 +10,7 @@ import {Test} from '../tester/tester.model';
 export class TesterHomeComponent {
   storedTests: Test[] = [];
 
-  onTestAdded(test){
+  onTestAdded(test) {
     this.storedTests.push(test)
   }
 

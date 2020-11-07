@@ -13,17 +13,17 @@
   text-align: center;
 }
 
-.officerFullName{
+.officerName{
   font-size: 20px;
   width: 50%;
 }
 
-.officerUsername{
+.officerPosition{
   font-size: 20px;
   width: 50%;
 }
 
-.officerPassword{
+.testCentreId{
   font-size: 20px;
   width: 50%;
 }

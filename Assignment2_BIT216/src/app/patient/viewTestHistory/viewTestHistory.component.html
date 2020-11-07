@@ -1,35 +1,31 @@
+<mat-drawer-container class="container">
 
-<mat-drawer-container class= "container">
-
-	<mat-drawer mode="side" opened>
-    <button mat-stroked-button color= "primary" routerLink= "/patient">Home</button>
+  <mat-drawer mode="side" opened>
+    <button mat-stroked-button color="primary" routerLink="/patient">Home</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/view-testHistory" >View Test History</button>
+    <button mat-stroked-button color="primary" routerLink="/view-testHistory">View Test History</button>
   </mat-drawer>
-  
+
   <mat-drawer-content>
     <h2>History of test taken by you:-</h2>
 
-  <mat-accordion  multi = "true" *ngIf= "tests.length>0">
-    <mat-expansion-panel class="list" *ngFor ="let test of tests">
-      <mat-expansion-panel-header>
-        <p><b>Patient: {{test.patientName}}</b></p>
-      </mat-expansion-panel-header>
-      <p><b>Username: </b><i>{{test.patientUsername}}</i></p>
-      <p><b>Password: </b><i>{{test.patientPassword}}</i></p>
-      <p><b>Name: </b><i>{{test.patientName}}</i></p>
-      <p><b>Type: </b><i>{{test.patientType}}</i></p>
-      <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
+    <mat-accordion multi="true" *ngIf="tests.length>0">
+      <mat-expansion-panel class="list" *ngFor="let test of tests">
+        <mat-expansion-panel-header>
+          <p><b>Patient: {{test.patientName}}</b></p>
+        </mat-expansion-panel-header>
+        <p><b>Username: </b><i>{{test.patientUsername}}</i></p>
+        <p><b>Password: </b><i>{{test.patientPassword}}</i></p>
+        <p><b>Name: </b><i>{{test.patientName}}</i></p>
+        <p><b>Type: </b><i>{{test.patientType}}</i></p>
+        <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
 
-    </mat-expansion-panel>
-  </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-  <p class="info-text mat-body-1" *ngIf= "tests.length == 0" > No test has been recorded yet</p>
-  <br>
-  <button class = "btnBack" mat-stroked-button color ="accent" routerLink= "/patient">Back to main page</button>
+    <p class="info-text mat-body-1" *ngIf="tests.length == 0"> No test has been recorded yet</p>
+    <br>
+    <button class="btnBack" mat-stroked-button color="accent" routerLink="/patient">Back to main page</button>
 
-</mat-drawer-content>
+  </mat-drawer-content>
 </mat-drawer-container>
-
-  
-

@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { PostsService } from '../posts.service';
+import { Subscription } from 'rxjs';
+
+import { Register } from './test-centre.models';
+import { TestCentresService } from './test-centres.service';
 
 @Component({
   selector: 'app-reg-tc',
@@ -8,25 +11,37 @@ import { PostsService } from '../posts.service';
   styleUrls: ['./reg-tc.component.css']
 })
 
-export class RegisterTcComponent{
+export class RegisterTcComponent implements OnInit {
 
-enteredCentreName ='';
-enteredCentreTel ='';
-enteredCentreAdd ='';
+  enteredCentreName = '';
+  enteredCentreTel = '';
+  enteredCentreAdd = '';
 
+  registers: Register[] = [];
+  private registersSub: Subscription;
 
-constructor(public PostsService: PostsService){}
+  constructor(private TestCentresService: TestCentresService) { }
 
-onAddRegister(form: NgForm){
+  onAddTestCentre(form: NgForm) {
 
-  if (form.invalid){
-    return;
-  }
-    this.PostsService.addRegister(form.value.centreName,form.value.centreTel,form.value.centreAdd);
+    if (form.invalid) {
+      return;
+    }
+    const { centreName, centreTel, centreAdd } = form.value;
+    this.TestCentresService.addTestCentre(centreName, centreTel, centreAdd);
     form.resetForm();
   }
 
-  onAddReg(){
+  onAddReg() {
     alert('Your registration is successful!');
   }
+
+  ngOnInit() {
+    this.TestCentresService.getRegisters();
+    this.registersSub = this.TestCentresService.getRegistersUpdateListener()
+      .subscribe((registers: Register[]) => {
+        this.registers = registers;
+      });
+  }
+
 }

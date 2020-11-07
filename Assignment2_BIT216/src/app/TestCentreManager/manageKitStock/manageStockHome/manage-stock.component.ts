@@ -9,9 +9,9 @@ import { UpdateKit } from '../updateKit.model';
 
 export class ManageStockComponent {
 
-  storedUpdateKits: UpdateKit [] = [];
+  storedUpdateKits: UpdateKit[] = [];
 
-  onUpdateKit(updateKit){
+  onUpdateKit(updateKit) {
     this.storedUpdateKits.push(updateKit)
   }
 }

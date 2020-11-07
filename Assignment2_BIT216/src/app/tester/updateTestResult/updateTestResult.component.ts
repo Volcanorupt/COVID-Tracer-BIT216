@@ -1,14 +1,14 @@
-import {Component,OnInit} from '@angular/core';
-import {Test} from '../tester.model';
+import { Component, OnInit } from '@angular/core';
+import { Test } from '../tester.model';
 import { TestService } from '../tester.service';
 
 @Component({
-  selector:'app-update-test-result',
+  selector: 'app-update-test-result',
   templateUrl: './updateTestResult.component.html',
   styleUrls: ['./updateTestResult.component.css']
 })
 
-export class updateTestResultComponent implements OnInit{
+export class updateTestResultComponent implements OnInit {
 
   tests: Test[] = [];
 
@@ -16,7 +16,7 @@ export class updateTestResultComponent implements OnInit{
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.tests = this.testservice.getTests();
   }
 

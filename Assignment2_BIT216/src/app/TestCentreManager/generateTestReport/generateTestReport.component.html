@@ -1,21 +1,20 @@
-
 <mat-drawer-container class="container">
-	<mat-drawer color="primary" mode="side" opened>
-    <button mat-stroked-button color= "primary" routerLink= "/tcmHome">Home</button>
+  <mat-drawer color="primary" mode="side" opened>
+    <button mat-stroked-button color="primary" routerLink="/tcmHome">Home</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <button mat-stroked-button color="primary" routerLink="/reg-tc">Register Test Centre</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <button mat-stroked-button color="primary" routerLink="/record-to">Record Tester</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <button mat-stroked-button color="primary" routerLink="/manage-stock">Manage Test-Kit Stock</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+    <button mat-stroked-button color="primary" routerLink="/generate-testReport">Generate Test Report</button>
   </mat-drawer>
 
-	<mat-drawer-content>
+  <mat-drawer-content>
     <h2>Generate Test Report</h2>
 
-    <table style="width:100%" multi = "true" *ngIf= "reports.length>0">
+    <table style="width:100%" multi="true" *ngIf="reports.length>0">
       <tr>
         <th>patientID</th>
         <th>Patient Username</th>
@@ -24,7 +23,7 @@
         <th>Patient Type</th>
         <th>Patient Symptoms</th>
       </tr>
-      <tr *ngFor= "let generate of reports">
+      <tr *ngFor="let generate of reports">
         <th></th>
         <th>{{generate.patientUsername}}</th>
         <th>{{generate.patientPassword}}</th>
@@ -32,12 +31,12 @@
         <th>{{generate.patientType}}</th>
         <th>{{generate.patientSymptoms}}</th>
       </tr>
-    
+
     </table>
-    
-    <p class="info-text mat-body-1" *ngIf= "reports.length == 0" > No test has been recorded yet</p>
+
+    <p class="info-text mat-body-1" *ngIf="reports.length == 0"> No test has been recorded yet</p>
     <br>
-    <button class="butBack" mat-stroked-button color ="accent" routerLink= "/tcmHome">Back to main page</button>
-    
+    <button class="butBack" mat-stroked-button color="accent" routerLink="/tcmHome">Back to main page</button>
+
   </mat-drawer-content>
 </mat-drawer-container>

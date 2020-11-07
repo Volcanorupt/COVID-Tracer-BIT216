@@ -1,45 +1,39 @@
+<mat-drawer-container class="container">
 
-
-<mat-drawer-container class= "container">
-
-	<mat-drawer mode="side" opened>
-    <button mat-stroked-button color= "primary" routerLink= "/tcmHome">Home</button>
+  <mat-drawer mode="side" opened>
+    <button mat-stroked-button color="primary" routerLink="/tcmHome">Home</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/reg-tc" >Register Test Centre</button>
+    <button mat-stroked-button color="primary" routerLink="/reg-tc">Register Test Centre</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/record-to">Record Tester</button>
+    <button mat-stroked-button color="primary" routerLink="/record-to">Record Tester</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/manage-stock">Manage Test-Kit Stock</button>
+    <button mat-stroked-button color="primary" routerLink="/manage-stock">Manage Test-Kit Stock</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/generate-testReport">Generate Test Report</button>
+    <button mat-stroked-button color="primary" routerLink="/generate-testReport">Generate Test Report</button>
   </mat-drawer>
-  
+
   <mat-drawer-content>
     <h3>List of Testers:-</h3>
-      <br>
-    
-    <mat-accordion multi = "true" *ngIf= "records.length>0">
-      <mat-expansion-panel *ngFor= "let record of records">
+    <br>
+
+    <mat-accordion multi="true" *ngIf="records.length>0">
+      <mat-expansion-panel *ngFor="let record of records">
         <mat-expansion-panel-header>
           <p><b>Tester ID: </b></p>
-      </mat-expansion-panel-header>
-          <p><b>Tester Full Name: </b>{{record.officerFullName}}</p>
-          <p><b>Tester Username: </b> {{record.officerUsername}}</p>
-          <p><b>Tester Password: </b> {{record.officerPassword}}</p>
-          <mat-action-row>
-            <button mat-flat-button color="primary">Edit</button>
-            <button mat-flat-button color="warn">Delete</button>
+        </mat-expansion-panel-header>
+        <p><b>Tester Full Name: </b>{{record.officerFullName}}</p>
+        <p><b>Tester Username: </b> {{record.officerUsername}}</p>
+        <p><b>Tester Password: </b> {{record.officerPassword}}</p>
+        <mat-action-row>
+          <button mat-flat-button color="primary">Edit</button>
+          <button mat-flat-button color="warn">Delete</button>
         </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>
-  
-      <p class= "info-text mat-body-1" *ngIf= "records.length == 0"> No tester added yet </p>
-      <br>
-        <button class = "btnNewTester" mat-stroked-button color= "accent" routerLink = "/record-to">Record New Tester</button>
+
+    <p class="info-text mat-body-1" *ngIf="records.length == 0"> No tester added yet </p>
+    <br>
+    <button class="btnNewTester" mat-stroked-button color="accent" routerLink="/record-to">Record New Tester</button>
   </mat-drawer-content>
 
 </mat-drawer-container>
-
-
-
-

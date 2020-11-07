@@ -1,46 +1,43 @@
+<mat-drawer-container class="container">
 
-<mat-drawer-container class= "container">
-
-	<mat-drawer mode="side" opened>
-    <button mat-stroked-button color= "primary" routerLink= "/testerHome">Home</button>
+  <mat-drawer mode="side" opened>
+    <button mat-stroked-button color="primary" routerLink="/testerHome">Home</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/rec-newTest" >Record New Test</button>
+    <button mat-stroked-button color="primary" routerLink="/rec-newTest">Record New Test</button>
     <br>
-    <button mat-stroked-button color= "primary" routerLink= "/update-testResult">Update Test Result</button>
+    <button mat-stroked-button color="primary" routerLink="/update-testResult">Update Test Result</button>
   </mat-drawer>
-  
-<mat-drawer-content>
-  
-  <h3 class="label">List of Test Results:-</h3>
 
-  <input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID">
+  <mat-drawer-content>
 
- <mat-accordion  multi = "true" *ngIf= "tests.length>0">
-  <mat-expansion-panel class="list" *ngFor ="let test of tests">
-    <mat-expansion-panel-header>
-      <p><b>Patient: {{test.patientName}}</b></p>
-    </mat-expansion-panel-header>
-    <p><b>Username: </b><i>{{test.patientUsername}}</i></p>
-    <p><b>Password: </b><i>{{test.patientPassword}}</i></p>
-    <p><b>Name: </b><i>{{test.patientName}}</i></p>
-    <p><b>Type: </b><i>{{test.patientType}}</i></p>
-    <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
-    <p><b>Status: </b><i>Pending</i></p>
+    <h3 class="label">List of Test Results:-</h3>
 
-    <mat-action-row>
-      <button mat-raised-button color ="primary">Edit</button>
-      <button mat-raised-button color ="warn">Delete</button>
-    </mat-action-row>
+    <input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID">
 
-  </mat-expansion-panel>
-</mat-accordion>
+    <mat-accordion multi="true" *ngIf="tests.length>0">
+      <mat-expansion-panel class="list" *ngFor="let test of tests">
+        <mat-expansion-panel-header>
+          <p><b>Patient: {{test.patientName}}</b></p>
+        </mat-expansion-panel-header>
+        <p><b>Username: </b><i>{{test.patientUsername}}</i></p>
+        <p><b>Password: </b><i>{{test.patientPassword}}</i></p>
+        <p><b>Name: </b><i>{{test.patientName}}</i></p>
+        <p><b>Type: </b><i>{{test.patientType}}</i></p>
+        <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
+        <p><b>Status: </b><i>Pending</i></p>
 
-<p class="info-text mat-body-1" *ngIf= "tests.length == 0" > No test has been recorded yet</p>
-<br>
-<button class = "btnRecord" mat-stroked-button color ="accent" routerLink= "/rec-newTest">Add New Test</button>
+        <mat-action-row>
+          <button mat-raised-button color="primary">Edit</button>
+          <button mat-raised-button color="warn">Delete</button>
+        </mat-action-row>
 
-</mat-drawer-content>
-  
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <p class="info-text mat-body-1" *ngIf="tests.length == 0"> No test has been recorded yet</p>
+    <br>
+    <button class="btnRecord" mat-stroked-button color="accent" routerLink="/rec-newTest">Add New Test</button>
+
+  </mat-drawer-content>
+
 </mat-drawer-container>
-
-

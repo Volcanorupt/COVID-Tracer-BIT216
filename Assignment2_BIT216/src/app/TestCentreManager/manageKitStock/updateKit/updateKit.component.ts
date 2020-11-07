@@ -1,21 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {UpdateKit} from '../updateKit.model';
-import {UpdateKitService} from '../updateKit.service';
+import { Component, OnInit } from '@angular/core';
+import { UpdateKit } from '../updateKit.model';
+import { UpdateKitService } from '../updateKit.service';
 
 
 @Component({
-  selector :'app-updateKit',
+  selector: 'app-updateKit',
   templateUrl: './updateKit.component.html',
   styleUrls: ['./updateKit.component.css']
 })
 
-export class UpdateKitComponent implements OnInit{
+export class UpdateKitComponent implements OnInit {
 
-  updateKits: UpdateKit[]=[];
+  updateKits: UpdateKit[] = [];
 
-  constructor(public UpdateKitService:UpdateKitService){}
+  constructor(public UpdateKitService: UpdateKitService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.updateKits = this.UpdateKitService.getUpdateKits();
   }
 }

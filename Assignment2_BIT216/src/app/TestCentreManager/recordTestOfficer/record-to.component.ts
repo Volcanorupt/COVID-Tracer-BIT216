@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { PostsService } from '../posts.service';
+import { Subscription } from 'rxjs';
+
+import { TesterService } from './testers.service';
+import { Tester } from './tester.model';
 
 @Component({
   selector: 'app-recordTestOfficer',
@@ -8,24 +11,36 @@ import { PostsService } from '../posts.service';
   styleUrls: ['./record-to.component.css']
 })
 
-export class RecordToComponent{
+export class RecordToComponent implements OnInit {
 
-  enteredOfficerFullName ='';
-  enteredOfficerUsername ='';
-  enteredOfficerPassword ='';
+  enteredOfficerName = '';
+  enteredOfficerPosition = '';
+  enteredTestCentreId = '';
 
-  constructor(public PostsService: PostsService){}
+  testers: Tester[] = [];
+  private testersSub: Subscription;
 
-  onAddRecord(form: NgForm){
+  constructor(private TesterService: TesterService) { }
 
-    if (form.invalid){
+  onAddTester(form: NgForm) {
+
+    if (form.invalid) {
       return;
     }
-    this.PostsService.addRecord(form.value.officerFullName,form.value.officerUsername,form.value.officerPassword);
-      form.resetForm();
+    const { officerName, officerPosition, testCentreId } = form.value;
+    this.TesterService.addTester(form.value.officerFullname, form.value.officerPosition, form.value.testCentreId);
+    form.resetForm();
   }
 
-  onAddRec(){
+  onAddRec() {
     alert('New Tester recorded successfully!');
+  }
+
+  ngOnInit() {
+    this.TesterService.getTesters();
+    this.testersSub = this.TesterService.getTestersUpdateListener()
+      .subscribe((testers: Tester[]) => {
+        this.testers = testers;
+      });
   }
 }

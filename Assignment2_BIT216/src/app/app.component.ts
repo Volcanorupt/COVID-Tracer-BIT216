@@ -13,12 +13,12 @@ export class AppComponent {
   //storedRegisters: Post[]=[];
 
   //onPostAdded(test){
-    //this.storedTests.push(test)
- // }
+  //this.storedTests.push(test)
+  // }
 
- // onRegisterAdded(register){
-    //this.storedRegisters.push(register)
- // }
+  // onRegisterAdded(register){
+  //this.storedRegisters.push(register)
+  // }
 
 
 }

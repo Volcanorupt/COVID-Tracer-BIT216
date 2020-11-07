@@ -1,18 +1,18 @@
-import {UpdateKit} from './updateKit.model';
-import {Injectable} from '@angular/core';
+import { UpdateKit } from './updateKit.model';
+import { Injectable } from '@angular/core';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 
 export class UpdateKitService {
-  private updateKits: UpdateKit[]=[];
+  private updateKits: UpdateKit[] = [];
 
-  getUpdateKits(){
+  getUpdateKits() {
     return this.updateKits;
   }
 
   addUpdateKit(kitName: string, numStock: number) {
-      const updateKit: UpdateKit = {kitName:kitName, numStock:numStock };
-      this.updateKits.push(updateKit);
+    const updateKit: UpdateKit = { kitName: kitName, numStock: numStock };
+    this.updateKits.push(updateKit);
   }
 
 }

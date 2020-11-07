@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Generate} from '../post.model';
-import {TestService} from '../../tester/tester.service';
+import { Generate } from '../post.model';
+import { TestService } from '../../tester/tester.service';
 
 @Component({
   selector: 'app-generateTestReport',
@@ -10,11 +10,11 @@ import {TestService} from '../../tester/tester.service';
 
 export class GenerateTestReportComponent implements OnInit {
 
-  reports : Generate[] = [];
+  reports: Generate[] = [];
 
   constructor(public testservice: TestService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.reports = this.testservice.getTests();
   }
 

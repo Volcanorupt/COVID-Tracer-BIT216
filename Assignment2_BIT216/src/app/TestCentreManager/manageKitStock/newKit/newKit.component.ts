@@ -8,23 +8,23 @@ import { UpdateKitService } from '../updateKit.service';
   styleUrls: ['./newKit.component.css']
 })
 
-export class NewKitComponent{
+export class NewKitComponent {
 
-  enteredKitName='';
-  enteredNumStock='';
+  enteredKitName = '';
+  enteredNumStock = '';
 
-  constructor(public UpdateKitService: UpdateKitService){}
+  constructor(public UpdateKitService: UpdateKitService) { }
 
-  onAddUpdateKit(form: NgForm){
+  onAddUpdateKit(form: NgForm) {
 
-    if (form.invalid){
+    if (form.invalid) {
       return;
     }
-    this.UpdateKitService.addUpdateKit(form.value.kitName,form.value.numStock);
-      form.resetForm();
+    this.UpdateKitService.addUpdateKit(form.value.kitName, form.value.numStock);
+    form.resetForm();
   }
 
-  onAddKit(){
+  onAddKit() {
     alert('New stock has been added successfully!');
   }
 }
