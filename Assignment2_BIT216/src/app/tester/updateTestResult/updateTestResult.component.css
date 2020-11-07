@@ -1,5 +1,4 @@
-
- button{
+button {
   width: 100%;
   height: 15%;
 }
@@ -13,23 +12,24 @@
   text-align: center;
 }
 
-.info-text{
+.info-text {
   font-style: italic;
   color: red;
   font-weight: bold;
   font-size: large;
 }
 
-.testIDbox{
+.testIDbox {
   margin-left: 1rem;
   margin-top: 1rem;
 }
- .label{
-  margin-left: 1rem;
- }
 
- .btnRecord{
+.label {
+  margin-left: 1rem;
+}
+
+.btnRecord {
   font-size: 15px;
   width: 20%;
   height: auto;
- }
+}

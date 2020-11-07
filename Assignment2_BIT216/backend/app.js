@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 
 const TestCentre = require('./models/testCentre');
 const Tester = require('./models/tester');
+const Stock = require('./models/stock');
+const Test = require('./models/test');
 
 const mongoose = require("mongoose");
 
@@ -86,6 +88,59 @@ app.get("/api/tester", (req, res, next) => {
         .find()
         .then(testerList => {
             res.json(testerList).status(200)
+        })
+})
+
+//////////////////////////////////////////  Stock //////////////////////////////////////////
+
+app.post("/api/stock", (req, res, next) => {
+    const { kitName, numStock } = req.body;
+
+    const stock = new Stock({
+        kitName,
+        numStock,
+    });
+
+    return stock
+        .save()
+        .then(newStock => {
+            res.status(200).json(newStock);
+        })
+
+})
+
+app.get("/api/stock", (req, res, next) => {
+    Stock
+        .find()
+        .then(stockList => {
+            res.json(stockList).status(200)
+        })
+})
+
+//////////////////////////////////////////  New Test  //////////////////////////////////////////
+
+app.post("/api/test", (req, res, next) => {
+    const { patientName, patientType, patientSymptoms } = req.body;
+
+    const test = new Test({
+        patientName,
+        patientType,
+        patientSymptoms
+    });
+
+    return test
+        .save()
+        .then(newTest => {
+            res.status(200).json(newTest);
+        })
+
+})
+
+app.get("/api/test", (req, res, next) => {
+    Test
+        .find()
+        .then(testList => {
+            res.json(testList).status(200)
         })
 })
 

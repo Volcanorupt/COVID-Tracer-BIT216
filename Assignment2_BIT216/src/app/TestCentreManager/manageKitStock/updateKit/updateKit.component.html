@@ -15,13 +15,13 @@
   <mat-drawer-content>
     <h3>Update Existing Test-Kit Stock</h3>
 
-    <mat-accordion multi="true" *ngIf="updateKits.length>0">
-      <mat-expansion-panel *ngFor="let updateKits of updateKits">
+    <mat-accordion multi="true" *ngIf="stocks.length>0">
+      <mat-expansion-panel *ngFor="let stock of stocks">
         <mat-expansion-panel-header>
           <p><b>Test-Kit ID: </b></p>
         </mat-expansion-panel-header>
-        <p><b>Kit Name: </b>{{updateKits.kitName}}</p>
-        <p><b>Number of Stock: </b>{{updateKits.numStock}}</p>
+        <p><b>Kit Name: </b>{{stock.kitName}}</p>
+        <p><b>Number of Stock: </b>{{stock.numStock}}</p>
         <mat-action-row>
           <button mat-flat-button color="primary">Edit</button>
           <button mat-flat-button color="warn">Delete</button>
@@ -29,7 +29,7 @@
       </mat-expansion-panel>
     </mat-accordion>
 
-    <p class="info-text mat-body-1" *ngIf="updateKits.length == 0"> No stock added yet </p>
+    <p class="info-text mat-body-1" *ngIf="stocks.length == 0"> No stock added yet </p>
     <br>
     <button class="btnAddStock" mat-stroked-button color="accent" routerLink="/newKit">Add New Stock</button>
 

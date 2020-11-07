@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { patient } from '../patient.model';
-import { TestService } from '../../tester/tester.service';
+import { Subscription } from 'rxjs';
+
+import { Test } from '../../tester/recordNewTest/new-test.model';
+import { TestService } from '../../tester/recordNewTest/new-test.service';
 
 @Component({
   selector: 'app-testerHome',
@@ -8,13 +10,20 @@ import { TestService } from '../../tester/tester.service';
   styleUrls: ['./viewTestHistory.component.css']
 })
 export class viewTestHistoryComponent implements OnInit {
-  tests: patient[] = [];
+  enteredPatientName = '';
+  enteredPatientType = '';
+  enteredPatientSymptoms = '';
 
-  constructor(public testservice: TestService) {
+  tests: Test[] = [];
+  private testsSub: Subscription;
 
-  }
+  constructor(private TestService: TestService) { }
 
   ngOnInit() {
-    this.tests = this.testservice.getTests();
+    this.TestService.getTests();
+    this.testsSub = this.TestService.getTestsUpdateListener()
+      .subscribe((tests: Test[]) => {
+        this.tests = tests;
+      });
   }
 }

@@ -1,5 +1,4 @@
-
-button{
+button {
   width: 100%;
   height: 15%;
 }
@@ -13,14 +12,14 @@ button{
   text-align: center;
 }
 
-.info-text{
+.info-text {
   font-style: italic;
   color: red;
   font-weight: bold;
   font-size: large;
 }
 
-.btnBack{
+.btnBack {
   font-size: 15px;
   width: 20%;
   height: auto;

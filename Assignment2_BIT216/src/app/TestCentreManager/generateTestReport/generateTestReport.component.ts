@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Generate } from '../post.model';
-import { TestService } from '../../tester/tester.service';
+import { Subscription } from 'rxjs';
+
+import { Test } from '../../tester/recordNewTest/new-test.model';
+import { TestService } from '../../tester/recordNewTest/new-test.service';
 
 @Component({
   selector: 'app-generateTestReport',
@@ -10,12 +12,21 @@ import { TestService } from '../../tester/tester.service';
 
 export class GenerateTestReportComponent implements OnInit {
 
-  reports: Generate[] = [];
+  enteredPatientName = '';
+  enteredPatientType = '';
+  enteredPatientSymptoms = '';
 
-  constructor(public testservice: TestService) { }
+  tests: Test[] = [];
+  private testsSub: Subscription;
+
+  constructor(private TestService: TestService) { }
 
   ngOnInit() {
-    this.reports = this.testservice.getTests();
-  }
+    this.TestService.getTests();
+    this.testsSub = this.TestService.getTestsUpdateListener()
+      .subscribe((tests: Test[]) => {
+        this.tests = tests;
+      });
+   }
 
 }

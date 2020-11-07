@@ -15,11 +15,6 @@ export class TestCentresService {
 
     constructor(private http: HttpClient) { }
 
-    /*addTestCentre(centreName: string, centreTel: string, centreAdd: string) {
-        return this.http.post('http://localhost:3000/api/test-centres',{ centreName, centreTel, centreAdd })
-    }
-    */
-
     addTestCentre(centreName: string, centreTel: string, centreAdd: string) {
         const register: Register = { id: null, centreName: centreName, centreTel: centreTel, centreAdd: centreAdd };
         this.http
@@ -35,7 +30,7 @@ export class TestCentresService {
     getRegisters() {
         this.http.get<{ message: string, registers: any }>('http://localhost:3000/api/test-centres')
             .pipe(map((postData) => {
-                return postData.registers.map(register => {
+                return postData.registers.map((register: { centreName: any; centreTel: any; centreAdd: any; _id: any; }) => {
                     return {
                         centreName: register.centreName,
                         centreTel: register.centreTel,

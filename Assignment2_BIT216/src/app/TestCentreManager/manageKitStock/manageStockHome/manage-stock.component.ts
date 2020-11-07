@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UpdateKit } from '../updateKit.model';
+import { Stock } from '../stock.model';
 
 @Component({
   selector: 'app-manage-stock',
@@ -9,10 +9,10 @@ import { UpdateKit } from '../updateKit.model';
 
 export class ManageStockComponent {
 
-  storedUpdateKits: UpdateKit[] = [];
+  stocks: Stock[] = [];
 
   onUpdateKit(updateKit) {
-    this.storedUpdateKits.push(updateKit)
+    this.stocks.push(updateKit)
   }
 }
 

@@ -14,18 +14,6 @@
     <br>
 
     <form (submit)="onAddTest(testForm)" #testForm="ngForm">
-      <mat-form-field class="usernameP">
-        <input matInput type="text" name="patientUsername" ngModel required minlength="3" #patientUsername="ngModel"
-          placeholder="Enter patient username">
-        <mat-error *ngIf="patientUsername.invalid">Please Enter Patient Username.</mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="passwordP">
-        <input matInput type="text" name="patientPassword" ngModel required minlength="3" #patientPassword="ngModel"
-          placeholder="Enter patient password">
-        <mat-error *ngIf="patientPassword.invalid">Please Enter Patient Password.</mat-error>
-      </mat-form-field>
-      <br>
       <mat-form-field class="nameP">
         <input matInput type="text" name="patientName" ngModel required minlength="3" #patientName="ngModel"
           placeholder="Enter patient name">
@@ -45,7 +33,7 @@
         <mat-error *ngIf="patientSymptoms.invalid">Please enter Patient's Symptoms</mat-error>
       </mat-form-field>
       <br>
-      <button mat-flat-button color="primary" class="btnRegister" (click)="onAddReg()" type="submit">Record</button>
+      <button mat-flat-button color="primary" class="btnRegister" (click)="onAddRec()" type="submit">Record</button>
     </form>
 
   </mat-drawer-content>

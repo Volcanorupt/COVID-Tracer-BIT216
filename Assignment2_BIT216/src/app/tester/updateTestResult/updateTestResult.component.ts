@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Test } from '../tester.model';
-import { TestService } from '../tester.service';
+import { Subscription } from 'rxjs';
+
+import { Test } from '../recordNewTest/new-test.model';
+import { TestService } from '../recordNewTest/new-test.service';
 
 @Component({
   selector: 'app-update-test-result',
@@ -10,16 +12,21 @@ import { TestService } from '../tester.service';
 
 export class updateTestResultComponent implements OnInit {
 
+  enteredPatientName = '';
+  enteredPatientType = '';
+  enteredPatientSymptoms = '';
+
   tests: Test[] = [];
+  private testsSub: Subscription;
 
-  constructor(public testservice: TestService) {
-
-  }
+  constructor(private TestService: TestService) { }
 
   ngOnInit() {
-    this.tests = this.testservice.getTests();
-  }
-
-
+    this.TestService.getTests();
+    this.testsSub = this.TestService.getTestsUpdateListener()
+      .subscribe((tests: Test[]) => {
+        this.tests = tests;
+      });
+   }
 
 }

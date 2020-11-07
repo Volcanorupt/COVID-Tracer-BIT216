@@ -28,7 +28,7 @@ export class RecordToComponent implements OnInit {
       return;
     }
     const { officerName, officerPosition, testCentreId } = form.value;
-    this.TesterService.addTester(form.value.officerFullname, form.value.officerPosition, form.value.testCentreId);
+    this.TesterService.addTester(officerName, officerPosition, testCentreId);
     form.resetForm();
   }
 

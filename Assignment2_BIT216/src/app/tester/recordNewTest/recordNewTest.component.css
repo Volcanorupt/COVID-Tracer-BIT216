@@ -7,43 +7,32 @@
   text-align: center;
 }
 
-.radio{
-
+.radio {
   font-weight: 400;
   font-size: 20px;
 }
 
-.usernameP{
+.nameP {
   font-size: 20px;
   width: 50%;
 }
 
-.passwordP{
-   font-size: 20px;
-  width: 50%;
-}
-
-.nameP{
+.typeP {
   font-size: 20px;
   width: 50%;
 }
 
-.typeP{
+.symptomsP {
   font-size: 20px;
   width: 50%;
 }
 
-.symptomsP{
-  font-size: 20px;
-  width: 50%;
-}
-
-.btnRegister{
+.btnRegister {
   font-size: 20px;
   width: 20%;
 }
 
-button{
+button {
   width: 100%;
   height: 15%;
 }

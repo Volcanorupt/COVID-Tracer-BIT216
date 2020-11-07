@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UpdateKit } from '../updateKit.model';
-import { UpdateKitService } from '../updateKit.service';
+import { Subscription } from 'rxjs';
+
+import { Stock } from '../stock.model';
+import { StockService } from '../stock.service';
 
 
 @Component({
@@ -11,11 +13,18 @@ import { UpdateKitService } from '../updateKit.service';
 
 export class UpdateKitComponent implements OnInit {
 
-  updateKits: UpdateKit[] = [];
 
-  constructor(public UpdateKitService: UpdateKitService) { }
+  stocks: Stock[] = [];
+  private stocksSub: Subscription;
+
+  constructor(public StockService: StockService) { }
 
   ngOnInit() {
-    this.updateKits = this.UpdateKitService.getUpdateKits();
+    this.stocksSub = this.StockService.getStocksUpdateListener()
+      .subscribe((stocks: Stock[]) => {
+        this.stocks = stocks;
+        console.log(stocks)
+      });
+    this.StockService.getStock();
   }
 }

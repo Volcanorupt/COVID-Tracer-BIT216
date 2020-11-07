@@ -14,7 +14,7 @@
   <mat-drawer-content>
     <h2>Generate Test Report</h2>
 
-    <table style="width:100%" multi="true" *ngIf="reports.length>0">
+    <table style="width:100%" multi="true" *ngIf="tests.length>0">
       <tr>
         <th>patientID</th>
         <th>Patient Username</th>
@@ -23,10 +23,8 @@
         <th>Patient Type</th>
         <th>Patient Symptoms</th>
       </tr>
-      <tr *ngFor="let generate of reports">
+      <tr *ngFor="let generate of tests">
         <th></th>
-        <th>{{generate.patientUsername}}</th>
-        <th>{{generate.patientPassword}}</th>
         <th>{{generate.patientName}}</th>
         <th>{{generate.patientType}}</th>
         <th>{{generate.patientSymptoms}}</th>
@@ -34,7 +32,7 @@
 
     </table>
 
-    <p class="info-text mat-body-1" *ngIf="reports.length == 0"> No test has been recorded yet</p>
+    <p class="info-text mat-body-1" *ngIf="tests.length == 0"> No test has been recorded yet</p>
     <br>
     <button class="butBack" mat-stroked-button color="accent" routerLink="/tcmHome">Back to main page</button>
 

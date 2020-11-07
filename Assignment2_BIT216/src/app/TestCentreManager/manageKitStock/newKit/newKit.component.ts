@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UpdateKitService } from '../updateKit.service';
+import { Subscription } from 'rxjs';
+
+
+import { StockService } from '../stock.service';
+import { Stock } from '../stock.model';
 
 @Component({
   selector: 'app-manageKitStock',
@@ -8,23 +12,36 @@ import { UpdateKitService } from '../updateKit.service';
   styleUrls: ['./newKit.component.css']
 })
 
-export class NewKitComponent {
+export class NewKitComponent implements OnInit {
 
   enteredKitName = '';
   enteredNumStock = '';
 
-  constructor(public UpdateKitService: UpdateKitService) { }
+  stocks: Stock[] = [];
+  private stocksSub: Subscription;
 
-  onAddUpdateKit(form: NgForm) {
+  constructor(private StockService: StockService) { }
+
+  onAddStock(form: NgForm) {
 
     if (form.invalid) {
       return;
     }
-    this.UpdateKitService.addUpdateKit(form.value.kitName, form.value.numStock);
+    const { kitName, numStock } = form.value;
+    this.StockService.addStock(form.value.kitName, form.value.numStock);
     form.resetForm();
   }
 
   onAddKit() {
     alert('New stock has been added successfully!');
+  }
+
+  ngOnInit() {
+    this.stocksSub = this.StockService.getStocksUpdateListener()
+      .subscribe((stocks: Stock[]) => {
+        this.stocks = stocks;
+        console.log(stocks)
+      });
+    this.StockService.getStock();
   }
 }

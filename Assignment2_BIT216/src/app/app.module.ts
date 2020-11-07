@@ -26,7 +26,6 @@ import { RecordToComponent } from './TestCentreManager/recordTestOfficer/record-
 import { ManageStockComponent } from './TestCentreManager/manageKitStock/manageStockHome/manage-stock.component';
 import { UpdateKitComponent } from './TestCentreManager/manageKitStock/updateKit/updatekit.component';
 import { NewKitComponent } from './TestCentreManager/manageKitStock/newKit/newkit.component';
-//import { PostListComponent } from './TestCentreManager/post-list/post-list.component';
 import { GenerateTestReportComponent } from './TestCentreManager/generateTestReport/generateTestReport.component';
 
 import { TesterHomeComponent } from './tester/testerHome.component';
@@ -49,7 +48,6 @@ const appRoutes: Routes = [
   { path: 'manage-stock', component: ManageStockComponent },
   { path: 'updateKit', component: UpdateKitComponent },
   { path: 'newKit', component: NewKitComponent },
-  //{path: 'list', component: PostListComponent},
   { path: 'generate-testReport', component: GenerateTestReportComponent },
 
 
@@ -76,7 +74,6 @@ const appRoutes: Routes = [
     ManageStockComponent,
     UpdateKitComponent,
     NewKitComponent,
-    //PostListComponent,
     GenerateTestReportComponent,
 
     TesterHomeComponent,

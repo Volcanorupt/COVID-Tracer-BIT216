@@ -27,9 +27,9 @@ export class TesterService {
     }
 
     getTesters() {
-        this.http.get<{ message: string, testers: any }>('http://localhost:3000/api/tester')
+        this.http.get <any> ('http://localhost:3000/api/tester')
             .pipe(map((postData) => {
-                return postData.testers.map(tester => {
+                return postData.map((tester: { officerName: any; officerPosition: any; testCentreId: any; _id: any; }) => {
                     return {
                         officerName: tester.officerName,
                         officerPosition: tester.officerPosition,

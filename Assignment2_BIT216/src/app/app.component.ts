@@ -7,18 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covid19-system';
-
-  //storedTests = [];
-
-  //storedRegisters: Post[]=[];
-
-  //onPostAdded(test){
-  //this.storedTests.push(test)
-  // }
-
-  // onRegisterAdded(register){
-  //this.storedRegisters.push(register)
-  // }
-
-
 }
