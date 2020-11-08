@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-
 import { StockService } from '../stock.service';
 import { Stock } from '../stock.model';
 
@@ -14,13 +13,10 @@ import { Stock } from '../stock.model';
 
 export class NewKitComponent implements OnInit {
 
-  enteredKitName = '';
-  enteredNumStock = '';
-
   stocks: Stock[] = [];
-  private stocksSub: Subscription;
+  public stocksSub: Subscription;
 
-  constructor(private StockService: StockService) { }
+  constructor(public StockService: StockService) { }
 
   onAddStock(form: NgForm) {
 
@@ -28,7 +24,7 @@ export class NewKitComponent implements OnInit {
       return;
     }
     const { kitName, numStock } = form.value;
-    this.StockService.addStock(form.value.kitName, form.value.numStock);
+    this.StockService.addStock(kitName, numStock);
     form.resetForm();
   }
 
@@ -37,11 +33,14 @@ export class NewKitComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.stocksSub = this.StockService.getStocksUpdateListener()
       .subscribe((stocks: Stock[]) => {
         this.stocks = stocks;
         console.log(stocks)
       });
     this.StockService.getStock();
+
   }
+
 }
