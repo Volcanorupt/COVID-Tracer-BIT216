@@ -26,4 +26,8 @@ export class UpdateKitComponent implements OnInit {
       });
     this.StockService.getStock();
   }
+
+  onDelete(stockId: string) {
+    this.StockService.deleteStock(stockId);
+  }
 }

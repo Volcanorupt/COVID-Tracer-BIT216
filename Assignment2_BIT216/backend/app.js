@@ -126,6 +126,15 @@ app.get("/api/stock", (req, res, next) => {
         })
 });
 
+app.delete("/api/stock/:id", (req, res, next) => {
+    Stock.deleteOne({ _id: req.params.id }).then(result => {
+        console.log(result);
+        res.status(200).json({
+            message: "Stock Deleted"
+        });
+    })
+});
+
 //////////////////////////////////////////  New Test  //////////////////////////////////////////
 
 app.post("/api/test", (req, res, next) => {
@@ -155,6 +164,15 @@ app.get("/api/test", (req, res, next) => {
                 tests:testList
             });
         })
+});
+
+app.delete("/api/test/:id", (req, res, next) => {
+    Test.deleteOne({ _id: req.params.id }).then(result => {
+        console.log(result);
+        res.status(200).json({
+            message: "Test Deleted"
+        });
+    })
 });
 
 module.exports = app;

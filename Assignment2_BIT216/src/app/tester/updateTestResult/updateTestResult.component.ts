@@ -12,10 +12,6 @@ import { TestService } from '../recordNewTest/new-test.service';
 
 export class updateTestResultComponent implements OnInit {
 
-  enteredPatientName = '';
-  enteredPatientType = '';
-  enteredPatientSymptoms = '';
-
   tests: Test[] = [];
   private testsSub: Subscription;
 
@@ -27,6 +23,10 @@ export class updateTestResultComponent implements OnInit {
       .subscribe((tests: Test[]) => {
         this.tests = tests;
       });
-   }
+  }
+
+  onDelete(testId: string) {
+    this.TestService.deleteTest(testId);
+  }
 
 }

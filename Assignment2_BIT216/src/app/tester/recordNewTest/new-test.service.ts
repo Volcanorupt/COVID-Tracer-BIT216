@@ -50,4 +50,13 @@ export class TestService {
     getTestsUpdateListener() {
         return this.testsUpdated.asObservable();
     }
+
+    deleteTest(testId: string){
+        this.http.delete('http://localhost:3000/api/test/' + testId)
+        .subscribe(() => {
+          const updatedTests = this.tests.filter(test => test.id !== testId);
+          this.tests = updatedTests,
+          this.testsUpdated.next([...this.tests]);
+        });
+      }
 }

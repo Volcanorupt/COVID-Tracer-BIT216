@@ -13,10 +13,6 @@ import { TestService } from './new-test.service';
 
 export class recordNewTestComponent {
 
-  //enteredPatientName = '';
-  //enteredPatientType = '';
-  //enteredPatientSymptoms = '';
-
   tests: Test[] = [];
   public testsSub: Subscription;
 
@@ -27,8 +23,8 @@ export class recordNewTestComponent {
     if (form.invalid) {
       return;
     }
-    const { patientName, patientType, patientSymptoms } = form.value;
-    this.TestService.addTest(patientName, patientType, patientSymptoms);
+    const { patientName, patientType, patientSymptoms, testDate } = form.value;
+    this.TestService.addTest(patientName, patientType, patientSymptoms, testDate);
     form.resetForm();
   }
 

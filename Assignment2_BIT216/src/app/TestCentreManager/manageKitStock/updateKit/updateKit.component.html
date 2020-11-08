@@ -24,7 +24,7 @@
         <p><b>Number of Stock: </b>{{stock.numStock}}</p>
         <mat-action-row>
           <button mat-flat-button color="primary">Edit</button>
-          <button mat-flat-button color="warn">Delete</button>
+          <button mat-flat-button color="warn" (click) = "onDelete(stock.id)">Delete</button>
         </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>

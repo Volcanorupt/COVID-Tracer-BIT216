@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 
 export class StockService {
-  
+
   private stocks: Stock[] = [];
   private stocksUpdated = new Subject<Stock[]>();
 
@@ -27,7 +27,7 @@ export class StockService {
   }
 
   getStock() {
-    this.http.get <any> ('http://localhost:3000/api/stock')
+    this.http.get<any>('http://localhost:3000/api/stock')
       .pipe(map((postData) => {
         return postData.stocks.map((stock: { kitName: any; numStock: any; _id: any; }) => {
           return {
@@ -42,11 +42,20 @@ export class StockService {
         this.stocks = transformedStocks;
         this.stocksUpdated.next([...this.stocks]);
       })
-     
+
   }
 
   getStocksUpdateListener() {
     return this.stocksUpdated.asObservable();
+  }
+
+  deleteStock(stockId: string) {
+    this.http.delete('http://localhost:3000/api/stock/' + stockId)
+      .subscribe(() => {
+        const updatedStocks = this.stocks.filter(stock => stock.id !== stockId);
+        this.stocks = updatedStocks,
+          this.stocksUpdated.next([...this.stocks]);
+      });
   }
 
 }
