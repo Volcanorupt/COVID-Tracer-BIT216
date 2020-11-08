@@ -12,9 +12,8 @@
     <mat-accordion multi="true" *ngIf="tests.length>0">
       <mat-expansion-panel class="list" *ngFor="let test of tests">
         <mat-expansion-panel-header>
-          <p><b>Patient: {{test.patientName}}</b></p>
+          <p><b>Test Date: {{test.testDate}}</b></p>
         </mat-expansion-panel-header>
-        <p><b>Name: </b><i>{{test.patientName}}</i></p>
         <p><b>Type: </b><i>{{test.patientType}}</i></p>
         <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
 

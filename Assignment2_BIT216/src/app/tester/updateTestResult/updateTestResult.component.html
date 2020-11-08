@@ -12,16 +12,17 @@
 
     <h3 class="label">List of Test Results:-</h3>
 
-    <input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID">
+    <!--input class="testIDbox" type="text" name="testID" placeholder="Please enter the TestID"-->
 
     <mat-accordion multi="true" *ngIf="tests.length>0">
       <mat-expansion-panel class="list" *ngFor="let test of tests">
         <mat-expansion-panel-header>
-          <p><b>Patient: {{test.id}}</b></p>
+          <p><b>PatientID: {{test.id}}</b></p>
         </mat-expansion-panel-header>
         <p><b>Name: </b><i>{{test.patientName}}</i></p>
         <p><b>Type: </b><i>{{test.patientType}}</i></p>
         <p><b>Symptoms: </b><i>{{test.patientSymptoms}}</i></p>
+        <p><b>Test Date: </b><i>{{test.testDate}}</i></p>
         <p><b>Status: </b><i>Pending</i></p>
 
         <mat-action-row>

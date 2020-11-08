@@ -15,8 +15,8 @@ export class TestService {
 
     constructor(private http: HttpClient) { }
 
-    addTest(patientName: string, patientType: string, patientSymptoms: string) {
-        const test: Test = { id: null, patientName: patientName, patientType: patientType, patientSymptoms: patientSymptoms };
+    addTest(patientName: string, patientType: string, patientSymptoms: string, testDate: string) {
+        const test: Test = { id: null, patientName: patientName, patientType: patientType, patientSymptoms: patientSymptoms, testDate: testDate };
         this.http
             .post<{ message: string, testId: string }>('http://localhost:3000/api/test', test)
             .subscribe((responseData) => {
@@ -28,13 +28,14 @@ export class TestService {
     }
 
     getTests() {
-        this.http.get<{ message: string, tests: any }>('http://localhost:3000/api/test')
+        this.http.get<any>('http://localhost:3000/api/test')
             .pipe(map((postData) => {
-                return postData.tests.map((test: { patientName: any; patientType: any; patientSymptoms: any; _id: any; }) => {
+                return postData.tests.map((test: { patientName: any; patientType: any; patientSymptoms: any; testDate: any; _id: any; }) => {
                     return {
                         patientName: test.patientName,
                         patientType: test.patientType,
                         patientSymptoms: test.patientSymptoms,
+                        testDate: test.testDate,
                         id: test._id
                     };
                 });

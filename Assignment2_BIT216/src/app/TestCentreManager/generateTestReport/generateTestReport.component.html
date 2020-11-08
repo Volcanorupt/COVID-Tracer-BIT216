@@ -17,17 +17,17 @@
     <table style="width:100%" multi="true" *ngIf="tests.length>0">
       <tr>
         <th>patientID</th>
-        <th>Patient Username</th>
-        <th>Patient Password</th>
         <th>Patient Name</th>
         <th>Patient Type</th>
         <th>Patient Symptoms</th>
+        <th>Test Date</th>
       </tr>
       <tr *ngFor="let generate of tests">
-        <th></th>
+        <th>{{generate.id}}</th>
         <th>{{generate.patientName}}</th>
         <th>{{generate.patientType}}</th>
         <th>{{generate.patientSymptoms}}</th>
+        <th>{{generate.testDate}}</th>
       </tr>
 
     </table>

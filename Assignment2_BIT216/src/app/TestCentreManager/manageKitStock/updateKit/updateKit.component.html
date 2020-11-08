@@ -18,7 +18,7 @@
     <mat-accordion multi="true" *ngIf="stocks.length>0">
       <mat-expansion-panel *ngFor="let stock of stocks">
         <mat-expansion-panel-header>
-          <p><b>Test-Kit ID: </b></p>
+          <p><b>Test-Kit ID: {{stock.id}}</b></p>
         </mat-expansion-panel-header>
         <p><b>Kit Name: </b>{{stock.kitName}}</p>
         <p><b>Number of Stock: </b>{{stock.numStock}}</p>

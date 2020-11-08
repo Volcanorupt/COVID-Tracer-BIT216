@@ -13,12 +13,12 @@ import { TestService } from './new-test.service';
 
 export class recordNewTestComponent {
 
-  enteredPatientName = '';
-  enteredPatientType = '';
-  enteredPatientSymptoms = '';
+  //enteredPatientName = '';
+  //enteredPatientType = '';
+  //enteredPatientSymptoms = '';
 
   tests: Test[] = [];
-  private testsSub: Subscription;
+  public testsSub: Subscription;
 
   constructor(private TestService: TestService) { }
 

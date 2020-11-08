@@ -18,7 +18,7 @@ export class RecordToComponent implements OnInit {
   enteredTestCentreId = '';
 
   testers: Tester[] = [];
-  private testersSub: Subscription;
+  public testersSub: Subscription;
 
   constructor(private TesterService: TesterService) { }
 

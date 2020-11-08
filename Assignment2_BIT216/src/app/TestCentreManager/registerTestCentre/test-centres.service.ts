@@ -28,7 +28,7 @@ export class TestCentresService {
     }
 
     getRegisters() {
-        this.http.get<{ message: string, registers: any }>('http://localhost:3000/api/test-centres')
+        this.http.get <any> ('http://localhost:3000/api/test-centres')
             .pipe(map((postData) => {
                 return postData.registers.map((register: { centreName: any; centreTel: any; centreAdd: any; _id: any; }) => {
                     return {
@@ -49,4 +49,5 @@ export class TestCentresService {
     getRegistersUpdateListener() {
         return this.registersUpdated.asObservable();
     }
+
 }

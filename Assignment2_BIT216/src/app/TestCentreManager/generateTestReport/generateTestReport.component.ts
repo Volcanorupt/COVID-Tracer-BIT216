@@ -12,21 +12,17 @@ import { TestService } from '../../tester/recordNewTest/new-test.service';
 
 export class GenerateTestReportComponent implements OnInit {
 
-  enteredPatientName = '';
-  enteredPatientType = '';
-  enteredPatientSymptoms = '';
-
   tests: Test[] = [];
-  private testsSub: Subscription;
+  public testsSub: Subscription;
 
   constructor(private TestService: TestService) { }
 
   ngOnInit() {
-    this.TestService.getTests();
     this.testsSub = this.TestService.getTestsUpdateListener()
       .subscribe((tests: Test[]) => {
         this.tests = tests;
+        console.log(tests)
       });
-   }
-
+    this.TestService.getTests();
+  }
 }

@@ -1,6 +1,7 @@
 export interface Test {
-    id: string;
-    patientName: string;
-    patientType: string;
-    patientSymptoms: string;
-  }
+  id: string;
+  patientName: string;
+  patientType: string;
+  patientSymptoms: string;
+  testDate: string;
+}

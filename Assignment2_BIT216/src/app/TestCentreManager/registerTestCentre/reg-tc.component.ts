@@ -18,7 +18,7 @@ export class RegisterTcComponent implements OnInit {
   enteredCentreAdd = '';
 
   registers: Register[] = [];
-  private registersSub: Subscription;
+  public registersSub: Subscription;
 
   constructor(private TestCentresService: TestCentresService) { }
 

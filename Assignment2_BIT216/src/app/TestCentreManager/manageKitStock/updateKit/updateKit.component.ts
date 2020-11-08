@@ -14,7 +14,7 @@ import { StockService } from '../stock.service';
 export class UpdateKitComponent implements OnInit {
 
   stocks: Stock[] = [];
-  private stocksSub: Subscription;
+  public stocksSub: Subscription;
 
   constructor(public StockService: StockService) { }
 

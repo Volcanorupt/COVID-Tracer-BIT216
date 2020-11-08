@@ -22,15 +22,21 @@
       <br>
       <mat-form-field class="typeP">
         <input matInput type="text" name="patientType" ngModel required minlength="3" #patientType="ngModel"
-          placeholder="Enter patient type eg.Returnee,Quarantined,Close Contact,Infected,Suspected">
+          placeholder="Enter patient type (Returnee,Quarantined,Close Contact,Infected,Suspected)">
         <mat-error *ngIf="patientType.invalid">Please enter Patient Type</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field class="symptomsP">
         <textarea matInput type="text" name="patientSymptoms" ngModel required minlength="3" #patientSymptoms="ngModel"
-          placeholder="Enter patient's symptoms">
+          placeholder="Enter patient symptoms">
             </textarea>
         <mat-error *ngIf="patientSymptoms.invalid">Please enter Patient's Symptoms</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="testDate">
+        <input matInput type="text" name="testDate" ngModel required minlength="3" #testDate="ngModel"
+          placeholder="Enter test date">
+        <mat-error *ngIf="patientSymptoms.invalid">Please enter Test Date</mat-error>
       </mat-form-field>
       <br>
       <button mat-flat-button color="primary" class="btnRegister" (click)="onAddRec()" type="submit">Record</button>

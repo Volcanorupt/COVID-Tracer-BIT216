@@ -27,7 +27,7 @@ export class StockService {
   }
 
   getStock() {
-    this.http.get<{ message: string, stocks: any }>('http://localhost:3000/api/stock')
+    this.http.get <any> ('http://localhost:3000/api/stock')
       .pipe(map((postData) => {
         return postData.stocks.map((stock: { kitName: any; numStock: any; _id: any; }) => {
           return {

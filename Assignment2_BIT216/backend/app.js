@@ -60,9 +60,12 @@ app.get("/api/test-centres", (req, res, next) => {
     TestCentre
         .find()
         .then(testCentreList => {
-            res.json(testCentreList).status(200)
+            res.status(200).json({
+                message: 'Test Centre fetched successfully!',
+                registers: testCentreList
+            });
         })
-})
+});
 
 //////////////////////////////////////////Record Tester//////////////////////////////////////////
 
@@ -87,7 +90,10 @@ app.get("/api/tester", (req, res, next) => {
     Tester
         .find()
         .then(testerList => {
-            res.json(testerList).status(200)
+            res.status(200).json({
+                message: 'Tester fetched successfully!',
+                testers:testerList
+            })
         })
 })
 
@@ -113,19 +119,23 @@ app.get("/api/stock", (req, res, next) => {
     Stock
         .find()
         .then(stockList => {
-            res.json(stockList).status(200)
+            res.status(200).json({
+                message: 'Stock fetched successfully!',
+                stocks: stockList
+            });
         })
-})
+});
 
 //////////////////////////////////////////  New Test  //////////////////////////////////////////
 
 app.post("/api/test", (req, res, next) => {
-    const { patientName, patientType, patientSymptoms } = req.body;
+    const { patientName, patientType, patientSymptoms, testDate } = req.body;
 
     const test = new Test({
         patientName,
         patientType,
-        patientSymptoms
+        patientSymptoms,
+        testDate
     });
 
     return test
@@ -140,8 +150,11 @@ app.get("/api/test", (req, res, next) => {
     Test
         .find()
         .then(testList => {
-            res.json(testList).status(200)
+            res.status(200).json({
+                message: 'Test fetched successfully!',
+                tests:testList
+            });
         })
-})
+});
 
 module.exports = app;
