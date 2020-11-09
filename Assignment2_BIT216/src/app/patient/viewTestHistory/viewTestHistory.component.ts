@@ -10,9 +10,6 @@ import { TestService } from '../../tester/recordNewTest/new-test.service';
   styleUrls: ['./viewTestHistory.component.css']
 })
 export class viewTestHistoryComponent implements OnInit {
-  enteredPatientName = '';
-  enteredPatientType = '';
-  enteredPatientSymptoms = '';
 
   tests: Test[] = [];
   private testsSub: Subscription;
@@ -25,5 +22,9 @@ export class viewTestHistoryComponent implements OnInit {
       .subscribe((tests: Test[]) => {
         this.tests = tests;
       });
+  }
+
+  onLogout() {
+    alert('Do you want to logout?')
   }
 }

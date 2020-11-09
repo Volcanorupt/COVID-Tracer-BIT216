@@ -9,7 +9,11 @@ export class PatientComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  
+  onLogout(){
+    alert('Do you want to logout?')
   }
 
 }

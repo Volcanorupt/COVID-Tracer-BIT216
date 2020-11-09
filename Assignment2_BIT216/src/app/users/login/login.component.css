@@ -1,26 +1,12 @@
-/* Full-width inputs */
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 20px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+.container {
+  background-color: lavenderblush;
+  width: auto;
+  height: 85%;
+  margin: 10px;
+  border: 1px solid #555;
+  text-align: center;
+  padding-top: 100px;
 }
-
-/* Set a style for all buttons */
-
-button {
-  background-color: blue;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
 /* Add a hover effect for buttons */
 
 button:hover {
@@ -29,9 +15,26 @@ button:hover {
 
 /* Add padding to containers */
 
-.container {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 300px;
-  padding-right: 300px;
+.register{
+  text-align: center;
+}
+
+.name {
+  font-size: 20px;
+  width: 50%;
+}
+
+.username {
+  font-size: 20px;
+  width: 50%;
+}
+
+.password {
+  font-size: 20px;
+  width: 50%;
+}
+
+.btnLogin{
+  font-size: 20px;
+  width: 20%;
 }

@@ -1,11 +1,13 @@
 <mat-drawer-container class="container">
 
-  <mat-drawer mode="side" opened>
+  <mat-drawer class="drawer" mode="side" opened>
     <button mat-stroked-button color="primary" routerLink="/testerHome">Home</button>
     <br>
     <button mat-stroked-button color="primary" routerLink="/rec-newTest">Record New Test</button>
     <br>
     <button mat-stroked-button color="primary" routerLink="/update-testResult">Update Test Result</button>
+    <br>
+    <button mat-stroked-button color="accent" (click)="onLogout()" routerLink="/home">Log Out</button>
   </mat-drawer>
 
   <mat-drawer-content>

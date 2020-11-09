@@ -32,6 +32,10 @@ export class recordNewTestComponent {
     alert('New test created successfully!');
   }
 
+  onLogout(){
+    alert('Do you want to logout?')
+  }
+
   ngOnInit() {
     this.TestService.getTests();
     this.testsSub = this.TestService.getTestsUpdateListener()

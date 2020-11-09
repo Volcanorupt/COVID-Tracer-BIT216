@@ -1,13 +1,27 @@
 .container {
-  background-color: aliceblue;
+  background-image: url(https://www.jonesday.com/-/media/images/publications/2020/08/emerging-testing-technologies-offer-potentially-significant-improvements-for-covid19-screening-programs/articleimage/emerging_testing_technologies_offer_potentially_s.jpeg?h=800&w=1600&la=en&hash=35396D1110BCA10467AC48786732F90D);
   width: auto;
-  height: 80%;
+  height: 85%;
   margin: 10px;
   border: 1px solid #555;
   text-align: center;
+  padding: 150px 0;
 }
 
 button {
   width: 100%;
   height: 15%;
+}
+
+.drawer{
+  width: 15%;
+}
+
+.pretty{
+  background-color: teal;
+  color: mintcream;
+  height: auto;
+  width: auto;
+  opacity: 80%;
+  text-align: center;
 }

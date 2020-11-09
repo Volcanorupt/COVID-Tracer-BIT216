@@ -5,6 +5,7 @@ const TestCentre = require('./models/testCentre');
 const Tester = require('./models/tester');
 const Stock = require('./models/stock');
 const Test = require('./models/test');
+const User = require('./models/user');
 
 const mongoose = require("mongoose");
 
@@ -173,6 +174,36 @@ app.delete("/api/test/:id", (req, res, next) => {
             message: "Test Deleted"
         });
     })
+});
+
+//////////////////////////////////////////  New User  //////////////////////////////////////////
+
+app.post("/api/user", (req, res, next) => {
+    const { name, username, password } = req.body;
+
+    const user = new User({
+        name,
+        username,
+        password,
+    });
+
+    return user
+        .save()
+        .then(newUser => {
+            res.status(200).json(newUser);
+        })
+
+})
+
+app.get("/api/user", (req, res, next) => {
+    User
+        .find()
+        .then(userList => {
+            res.status(200).json({
+                message: 'User fetched successfully!',
+                users:userList
+            });
+        })
 });
 
 module.exports = app;

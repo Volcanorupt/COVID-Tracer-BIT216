@@ -1,9 +1,11 @@
 <mat-drawer-container class="container">
 
-  <mat-drawer mode="side" opened>
+  <mat-drawer class="drawer" mode="side" opened>
     <button mat-stroked-button color="primary" routerLink="/patient">Home</button>
     <br>
     <button mat-stroked-button color="primary" routerLink="/view-testHistory">View Test History</button>
+    <br>
+    <button mat-stroked-button color="accent" (click)="onLogout()" routerLink="/home">Log Out</button>
   </mat-drawer>
 
   <mat-drawer-content>

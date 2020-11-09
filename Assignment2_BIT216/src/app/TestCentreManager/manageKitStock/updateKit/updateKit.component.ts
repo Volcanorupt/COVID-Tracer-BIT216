@@ -27,6 +27,10 @@ export class UpdateKitComponent implements OnInit {
     this.StockService.getStock();
   }
 
+  onLogout(){
+    alert('Do you want to logout?')
+  }
+
   onDelete(stockId: string) {
     this.StockService.deleteStock(stockId);
   }

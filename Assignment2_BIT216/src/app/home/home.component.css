@@ -1,3 +1,26 @@
-.users {
-    text-align: left;
+.container {
+    background-image: url(https://carsey.unh.edu/sites/default/files/landing-page/header-image/2020/covid-19-virus-carsey-website.jpg);
+    width: auto;
+    height: 82%;
+    margin: 10px;
+    border: 1px solid #555;
+    text-align : center;
+    padding: 120px 0;
 }
+
+.link {
+    text-align: center;
+    height: 5%;
+    width: auto;
+    color: lightblue;
+    background-color: lightblue;
+}
+
+.pretty{
+    background-color: midnightblue;
+    color: lightskyblue;
+    height: auto;
+    width: auto;
+    opacity: 80%;
+    text-align: center;
+  }

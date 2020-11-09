@@ -4,9 +4,9 @@ button {
 }
 
 .container {
-  background-color: aliceblue;
+  background-color: beige;
   width: auto;
-  height: 80%;
+  height: 85%;
   margin: 10px;
   border: 1px solid #555;
   text-align: center;
@@ -35,4 +35,8 @@ button {
 .btnManage {
   font-size: 20px;
   width: 20%;
+}
+
+.drawer {
+  width: 15%;
 }

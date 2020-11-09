@@ -15,4 +15,8 @@ export class TesterHomeComponent {
     this.storedTests.push(test)
   }
 
+  onLogout(){
+    alert('Do you want to logout?')
+  }
+
 }

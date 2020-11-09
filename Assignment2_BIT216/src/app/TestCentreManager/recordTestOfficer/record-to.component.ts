@@ -13,10 +13,6 @@ import { Tester } from './tester.model';
 
 export class RecordToComponent implements OnInit {
 
-  enteredOfficerName = '';
-  enteredOfficerPosition = '';
-  enteredTestCentreId = '';
-
   testers: Tester[] = [];
   public testersSub: Subscription;
 
@@ -34,6 +30,10 @@ export class RecordToComponent implements OnInit {
 
   onAddRec() {
     alert('New Tester recorded successfully!');
+  }
+
+  onLogout(){
+    alert('Do you want to logout?')
   }
 
   ngOnInit() {

@@ -1,11 +1,31 @@
-<form>
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    <label for="email"><b>Name</b></label>
-    <input type="email" placeholder="Enter Name" name="name" required>
-    <button type="submit">Register</button>
-  </div>
-</form>
+<mat-drawer-container class="container">
+
+  <form (submit)="onAddUser(userForm)" #userForm="ngForm">
+
+    <mat-form-field class="name">
+      <input matInput type="text" name="name" ngModel required minlength="3" #name="ngModel" placeholder="Enter name">
+      <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="username">
+      <input matInput type="text" name="username" ngModel required minlength="3" #username="ngModel"
+        placeholder="Enter username">
+      <mat-error *ngIf="username.invalid">Please enter a username</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="password">
+      <input matInput type="text" name="password" ngModel required minlength="3" #password="ngModel"
+        placeholder="Enter a password">
+      <mat-error *ngIf="password.invalid">Please enter a password</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="primary" class="btnRegister" (click)="onAddReg()" type="submit">Register</button>
+    <br><br>
+
+    <div class="login">
+      <a href="login">Back to Login</a>
+    </div>
+
+
+  </form>
+</mat-drawer-container>

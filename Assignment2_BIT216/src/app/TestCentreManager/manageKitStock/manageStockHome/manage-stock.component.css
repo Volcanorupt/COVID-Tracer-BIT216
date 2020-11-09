@@ -5,9 +5,9 @@
   }
   
 .container {
-    background-color: aliceblue;
+    background-color: beige;
     width: auto;
-    height: 80%;
+    height: 85%;
     border: 1px solid #555;
     margin: 10px;
     text-align: center;
@@ -52,3 +52,6 @@
     color: white;
 }
 
+.drawer{
+    width: 15%;
+  }

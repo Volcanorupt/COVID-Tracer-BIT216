@@ -14,5 +14,9 @@ export class ManageStockComponent {
   onUpdateKit(updateKit) {
     this.stocks.push(updateKit)
   }
+
+  onLogout(){
+    alert('Do you want to logout?')
+  }
 }
 

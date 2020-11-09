@@ -1,13 +1,27 @@
 .container {
-  background-color: aliceblue;
+  background-image: url(https://cdn.pixabay.com/photo/2020/03/30/09/12/corona-4983571_1280.jpg);
   width: auto;
-  height: 80%;
+  height: 85%;
   margin: 10px;
   border: 1px solid #555;
   text-align: center;
+  padding: 150px 0;
+}
+
+.drawer{
+  width: 15%;
 }
 
 button {
   width: 100%;
   height: 15%;
+}
+
+.pretty{
+  background-color: sienna;
+  color: bisque;
+  height: auto;
+  width: auto;
+  opacity: 80%;
+  text-align: center;
 }

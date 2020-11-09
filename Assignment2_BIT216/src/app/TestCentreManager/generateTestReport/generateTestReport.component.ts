@@ -25,4 +25,8 @@ export class GenerateTestReportComponent implements OnInit {
       });
     this.TestService.getTests();
   }
+
+  onLogout(){
+    alert('Do you want to logout?')
+  }
 }

@@ -32,6 +32,10 @@ export class NewKitComponent implements OnInit {
     alert('New stock has been added successfully!');
   }
 
+  onLogout(){
+    alert('Do you want to logout?')
+  }
+
   ngOnInit() {
 
     this.stocksSub = this.StockService.getStocksUpdateListener()

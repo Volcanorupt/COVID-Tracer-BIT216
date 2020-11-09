@@ -25,6 +25,10 @@ export class updateTestResultComponent implements OnInit {
       });
   }
 
+  onLogout(){
+    alert('Do you want to logout?')
+  }
+
   onDelete(testId: string) {
     this.TestService.deleteTest(testId);
   }

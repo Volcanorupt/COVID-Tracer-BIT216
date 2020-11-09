@@ -1,6 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
+
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -10,11 +14,33 @@ import { Router } from '@angular/router';
 })
 
 export class RegisterComponent implements OnInit {
-  constructor(private router: Router) { }
 
-  username: string;
-  password: string;
+  users: User[] = [];
+  public usersSub: Subscription;
 
-  ngOnInit() { }
+  constructor(private UserService: UserService) { }
+
+
+  onAddUser(form: NgForm) {
+
+    if (form.invalid) {
+      return;
+    }
+    const { name, username, password } = form.value;
+    this.UserService.addUser(name, username, password);
+    form.resetForm();
+  }
+
+  onAddReg() {
+    alert('New user created successfully!');
+  }
+
+  ngOnInit() {
+    this.UserService.getUser();
+    this.usersSub = this.UserService.getUsersUpdateListener()
+      .subscribe((users: User[]) => {
+        this.users = users;
+      });
+  }
 }
 

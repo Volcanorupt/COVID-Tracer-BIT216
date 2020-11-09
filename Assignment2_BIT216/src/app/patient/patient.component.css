@@ -1,13 +1,28 @@
 .container {
-  background-color: aliceblue;
+  background-image: url(https://e3.365dm.com/20/04/1600x900/skynews-antibody-test-covid-19_4971504.jpg?bypass-service-worker&20200418084922);
   width: auto;
-  height: 80%;
+  height: 85%;
   margin: 10px;
   border: 1px solid #555;
   text-align: center;
+  padding: 150px 0;
+
 }
 
 button {
   width: 100%;
   height: 15%;
+}
+
+.drawer{
+  width: 15%;
+}
+
+.pretty{
+  background-color: darkslategrey;
+  color: gainsboro;
+  height: auto;
+  width: auto;
+  opacity: 80%;
+  text-align: center;
 }

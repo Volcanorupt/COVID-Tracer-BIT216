@@ -36,6 +36,10 @@ export class RegisterTcComponent implements OnInit {
     alert('Your registration is successful!');
   }
 
+  onLogout(){
+    alert('Do you want to logout?')
+  }
+
   ngOnInit() {
     this.TestCentresService.getRegisters();
     this.registersSub = this.TestCentresService.getRegistersUpdateListener()

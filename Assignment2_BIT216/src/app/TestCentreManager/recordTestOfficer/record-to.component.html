@@ -1,6 +1,6 @@
 <mat-drawer-container class="container">
 
-  <mat-drawer mode="side" opened>
+  <mat-drawer class="drawer" mode="side" opened>
     <button mat-stroked-button color="primary" routerLink="/tcmHome">Home</button>
     <br>
     <button mat-stroked-button color="primary" routerLink="/reg-tc">Register Test Centre</button>
@@ -10,6 +10,8 @@
     <button mat-stroked-button color="primary" routerLink="/manage-stock">Manage Test-Kit Stock</button>
     <br>
     <button mat-stroked-button color="primary" routerLink="/generate-testReport">Generate Test Report</button>
+    <br>
+    <button mat-stroked-button color="accent" (click)="onLogout()" routerLink="/home">Log Out</button>
   </mat-drawer>
 
   <mat-drawer-content>

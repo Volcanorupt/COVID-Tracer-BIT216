@@ -6,7 +6,7 @@ button {
 .container {
   background-color: aliceblue;
   width: auto;
-  height: 80%;
+  height: 85%;
   margin: 10px;
   border: 1px solid #555;
   text-align: center;
@@ -32,4 +32,8 @@ button {
   font-size: 15px;
   width: 20%;
   height: auto;
+}
+
+.drawer{
+  width: 15%;
 }
