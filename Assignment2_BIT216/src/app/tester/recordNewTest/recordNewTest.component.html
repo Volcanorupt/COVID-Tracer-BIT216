@@ -18,26 +18,26 @@
       <mat-form-field class="nameP">
         <input matInput type="text" name="patientName" ngModel required minlength="3" #patientName="ngModel"
           placeholder="Enter patient name">
-        <mat-error *ngIf="patientName.invalid">Please enter Patient Name</mat-error>
+        <mat-error *ngIf="patientName.invalid">Please enter Patient's name</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field class="typeP">
         <input matInput type="text" name="patientType" ngModel required minlength="3" #patientType="ngModel"
           placeholder="Enter patient type (Returnee,Quarantined,Close Contact,Infected,Suspected)">
-        <mat-error *ngIf="patientType.invalid">Please enter Patient Type</mat-error>
+        <mat-error *ngIf="patientType.invalid">Please enter Patient's type</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field class="symptomsP">
         <textarea matInput type="text" name="patientSymptoms" ngModel required minlength="3" #patientSymptoms="ngModel"
           placeholder="Enter patient symptoms">
             </textarea>
-        <mat-error *ngIf="patientSymptoms.invalid">Please enter Patient Symptoms</mat-error>
+        <mat-error *ngIf="patientSymptoms.invalid">Please enter Patient's symptoms</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field class="testDate">
         <input matInput type="text" name="testDate" ngModel required minlength="3" #testDate="ngModel"
           placeholder="Enter test date">
-        <mat-error *ngIf="patientSymptoms.invalid">Please enter Test Date</mat-error>
+        <mat-error *ngIf="patientSymptoms.invalid">Please enter the date of Test</mat-error>
       </mat-form-field>
       <br>
       <button mat-flat-button color="primary" class="btnRegister" (click)="onAddRec()" type="submit">Record</button>
